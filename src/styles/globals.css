@@ -1,0 +1,38 @@
+:root {
+  color-scheme: dark;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+body::selection {
+  background: rgba(99, 102, 241, 0.35);
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+img {
+  border-style: none;
+}
+
+ul[class], ol[class] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
