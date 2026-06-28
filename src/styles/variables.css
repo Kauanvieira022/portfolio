@@ -1,0 +1,64 @@
+:root {
+
+  /* ===========================
+     COLORS
+  =========================== */
+
+  --color-background: #09090B;
+  --color-surface: #111113;
+  --color-surface-hover: #18181B;
+
+  --color-text: #FAFAFA;
+  --color-text-secondary: #A1A1AA;
+
+  --color-primary: #3B82F6;
+
+  --color-border: #27272A;
+
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+
+  /* ===========================
+     TYPOGRAPHY
+  =========================== */
+
+  --font-family: "Inter", sans-serif;
+
+  --font-size-xs: .875rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 3.5rem;
+
+  /* ===========================
+     SPACING
+  =========================== */
+
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+
+  /* ===========================
+     BORDER RADIUS
+  =========================== */
+
+  --radius-sm: .5rem;
+  --radius-md: .75rem;
+  --radius-lg: 1rem;
+
+  /* ===========================
+     LAYOUT
+  =========================== */
+
+  --container: 1200px;
+
+  /* ===========================
+     TRANSITIONS
+  =========================== */
+
+  --transition: .3s ease;
+
+}
