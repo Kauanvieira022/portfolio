@@ -18,10 +18,13 @@ body {
 }
 
 body::selection {
-  background: rgba(99, 102, 241, 0.35);
+  background: rgba(59, 130, 246, 0.35);
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -29,10 +32,16 @@ img {
   border-style: none;
 }
 
-ul[class], ol[class] {
+ul[class],
+ol[class] {
   list-style: none;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
+}
+
+section {
+  scroll-margin-top: 96px;
 }

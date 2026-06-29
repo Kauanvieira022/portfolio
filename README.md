@@ -1,103 +1,73 @@
-```md
-# 💼 Portfolio
+# Portfolio
 
-> A modern and scalable personal portfolio built with React, following professional software engineering practices.
+Portfolio pessoal desenvolvido com React e Vite, com foco em arquitetura limpa, componentes reutilizaveis e evolucao continua.
 
----
+Este projeto tem como objetivo apresentar minha trajetoria profissional, habilidades tecnicas e projetos, alem de demonstrar como estruturo e construo aplicacoes web modernas.
 
-## 📖 About
+## Status
 
-This repository contains the source code of my personal portfolio.
+Projeto em desenvolvimento.
 
-More than a website, this project is being developed as a real software product, focusing on clean architecture, component-based development, maintainability and scalability.
+Base atual:
 
-Its purpose is to present my professional journey, technical skills and personal projects while demonstrating how I structure and build modern web applications.
+- Configuracao inicial com React + Vite
+- Estrutura modular de pastas
+- Estilos globais e variaveis de design
+- Componentes reutilizaveis iniciais
+- Navbar e Hero Section em desenvolvimento
 
----
-
-## 🚀 Tech Stack
-
-### Frontend
+## Tecnologias
 
 - React
 - Vite
-- JavaScript (ES6+)
+- JavaScript
 - CSS Modules
-
-### Libraries
-
-- React Icons
 - Framer Motion
-
-### Development Tools
-
-- Git
-- GitHub
+- React Icons
 - ESLint
-- VS Code
 
----
+## Estrutura do projeto
 
-## 📂 Project Structure
-
-```
-
+```txt
 src/
-│
-├── assets/
-├── components/
-│   ├── layout/
-│   ├── sections/
-│   └── ui/
-│
-├── data/
-├── styles/
-│
-├── App.jsx
-├── main.jsx
-└── index.css
-
+|-- assets/
+|-- components/
+|   |-- layout/
+|   |-- sections/
+|   `-- ui/
+|-- data/
+|-- styles/
+|-- App.jsx
+|-- main.jsx
+`-- index.css
 ```
 
-The project follows a component-based architecture, separating reusable UI elements, layout components, page sections and application data.
+## Arquitetura
 
----
+O projeto segue uma arquitetura baseada em componentes, separando responsabilidades entre:
 
-## 🏗️ Architecture
+- `layout`: componentes estruturais da pagina, como Navbar e Footer
+- `sections`: secoes principais do portfolio
+- `ui`: componentes reutilizaveis de interface
+- `data`: conteudos e configuracoes centralizadas
+- `styles`: reset, variaveis, estilos globais e animacoes
 
-This project is being developed with scalability and maintainability in mind.
+Essa organizacao facilita manutencao, escalabilidade e evolucao por etapas.
 
-Some principles adopted during development include:
+## Roadmap
 
-- Component-based architecture
-- Separation of concerns
-- Reusable UI components
-- Modular CSS using CSS Modules
-- Centralized Design System
-- Conventional Commits
-- Progressive development by milestones
+### Base do projeto
 
----
+- [x] Criar projeto com React + Vite
+- [x] Configurar Git
+- [x] Criar estrutura inicial de pastas
+- [x] Configurar estilos globais
+- [x] Criar primeiros componentes reutilizaveis
 
-## 🗺️ Roadmap
+### Interface
 
-### Project Setup
-
-- [x] React + Vite
-- [x] Git configuration
-- [x] Initial project structure
-
-### Design System
-
-- [ ] Global styles
-- [ ] Color palette
-- [ ] Typography
-- [ ] Reusable UI components
-
-### Portfolio
-
-- [ ] Navigation
-- [ ] Hero Section
+- [x] Navbar
+- [x] Hero Section
 - [ ] About
 - [ ] Skills
 - [ ] Experience
@@ -105,49 +75,45 @@ Some principles adopted during development include:
 - [ ] Contact
 - [ ] Footer
 
-### Improvements
+### Melhorias futuras
 
-- [ ] Responsive Design
-- [ ] Dark Theme
-- [ ] GitHub API Integration
-- [ ] Animations
-- [ ] SEO Optimization
-- [ ] Automatic Deployment
+- [ ] Responsividade completa
+- [ ] Tema escuro refinado
+- [ ] Animacoes com Framer Motion
+- [ ] Integracao com GitHub API
+- [ ] SEO
+- [ ] Deploy automatico
 
----
+## Como executar
 
-## 🎯 Goals
+Instale as dependencias:
 
-This project aims to:
+```bash
+npm install
+```
 
-- Showcase my technical skills.
-- Present my personal and academic projects.
-- Apply software engineering best practices.
-- Continuously evolve as I grow as a developer.
+Execute o projeto em ambiente de desenvolvimento:
 
----
+```bash
+npm run dev
+```
 
-## 📚 Documentation
+Gere a versao de producao:
 
-Additional project documentation will be available in the `/docs` directory.
+```bash
+npm run build
+```
 
-Future documentation will include:
+## Objetivos
 
-- Project overview
-- Architecture decisions
-- Development roadmap
-- Changelog
+- Apresentar minhas habilidades tecnicas
+- Reunir projetos pessoais e academicos
+- Praticar boas praticas de engenharia de software
+- Evoluir o portfolio como um produto real
 
----
+## Autor
 
-## 🤝 Contributing
+Kauan Machado Vieira
 
-Although this is a personal project, suggestions, feedback and improvements are always welcome.
-
-Feel free to open an Issue or submit a Pull Request.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+- GitHub: [Kauanvieira022](https://github.com/Kauanvieira022)
+- LinkedIn: [kauan-machado-vieira](https://www.linkedin.com/in/kauan-machado-vieira-8b8632251/)
