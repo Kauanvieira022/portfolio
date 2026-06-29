@@ -42,6 +42,7 @@ function Projects({ language, t }) {
         <p className={styles.intro}>{t.projects.intro}</p>
 
         <motion.article
+          key={`featured-${language}`}
           className={styles.featured}
           variants={itemVariants}
           initial="hidden"
@@ -62,6 +63,7 @@ function Projects({ language, t }) {
         </motion.article>
 
         <motion.div
+          key={`grid-${language}`}
           className={styles.grid}
           variants={containerVariants}
           initial="hidden"

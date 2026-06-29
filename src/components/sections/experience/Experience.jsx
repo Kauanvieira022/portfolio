@@ -40,6 +40,7 @@ function Experience({ language, t }) {
         <SectionTitle subtitle={t.sectionSubtitles.experience} title={t.experience.title} />
 
         <motion.div
+          key={`experience-${language}`}
           className={styles.timeline}
           variants={containerVariants}
           initial="hidden"
