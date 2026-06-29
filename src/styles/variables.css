@@ -4,16 +4,16 @@
      COLORS
   =========================== */
 
-  --color-background: #09090B;
-  --color-surface: #111113;
-  --color-surface-hover: #18181B;
+  --color-background: #060816;
+  --color-surface: #101626;
+  --color-surface-hover: #18213a;
 
-  --color-text: #FAFAFA;
-  --color-text-secondary: #A1A1AA;
+  --color-text: #F8FAFC;
+  --color-text-secondary: #A1A9C2;
 
-  --color-primary: #3B82F6;
+  --color-primary: #8B5CF6;
 
-  --color-border: #27272A;
+  --color-border: #27324d;
 
   --color-success: #22C55E;
   --color-danger: #EF4444;

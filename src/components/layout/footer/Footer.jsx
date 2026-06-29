@@ -4,7 +4,7 @@ import social from "../../../data/social";
 
 import styles from "./Footer.module.css";
 
-function Footer() {
+function Footer({ language, t }) {
   return (
     <footer className={styles.footer}>
       <Container>
@@ -14,7 +14,7 @@ function Footer() {
           <div className={styles.links}>
             {social.map((item) => (
               <a key={item.label} href={item.href} target={item.label === "Email" ? "_self" : "_blank"} rel="noopener noreferrer">
-                {item.label}
+                {item.label === "Email" ? (language === "pt" ? "E-mail" : "Email") : item.label}
               </a>
             ))}
           </div>

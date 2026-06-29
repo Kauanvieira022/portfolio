@@ -2,8 +2,9 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--color-background);
+  background: rgba(6, 8, 22, 0.8);
   border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
   z-index: 1000;
 }
 
@@ -11,7 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  gap: 1rem;
+  min-height: 80px;
 }
 
 .logo {
@@ -20,30 +22,119 @@
 }
 
 .logo h2 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--color-text);
 }
 
 .logo span {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--color-text-secondary);
 }
 
 .menu {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.menu a {
+.menu a,
+.actions a {
   color: var(--color-text-secondary);
   transition: var(--transition);
 }
 
-.menu a:hover {
+.menu a:hover,
+.actions a:hover {
   color: var(--color-primary);
 }
 
 .actions {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.langToggle {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.langToggle:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.resume {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.hamburger:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-wrap: nowrap;
+    padding: 0.8rem 0;
+  }
+
+  .menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(6, 8, 22, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  .menuOpen {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .menu a {
+    display: block;
+    padding: 1rem;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

@@ -1,10 +1,19 @@
-const profile = {
+﻿const profile = {
   name: "Kauan Machado Vieira",
 
   role: "Full Stack Developer",
 
   description:
-    "Full Stack Developer focused on building modern web applications using React, Node.js and Python. Passionate about creating scalable solutions and continuously improving my skills.",
+    "I build modern web products and internal tools that connect interfaces, APIs, automation and data.",
+
+  summary:
+    "I turn product ideas into reliable digital experiences through thoughtful frontend development, robust backend services and practical data workflows.",
+
+  education:
+    "Student of Information Systems at FESPPR, expected graduation in December 2029.",
+
+  focus:
+    "I work across frontend, backend and data, focusing on clean interfaces, dependable services and solutions that create measurable impact.",
 
   email: "kauanvieira022@gmail.com",
 

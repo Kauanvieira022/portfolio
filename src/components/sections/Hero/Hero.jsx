@@ -1,3 +1,4 @@
+﻿import { motion } from "framer-motion";
 import profile from "../../../data/profile";
 import technologies from "../../../data/technologies";
 
@@ -5,10 +6,18 @@ import Button from "../../ui/Button";
 import Container from "../../ui/Container";
 
 import styles from "./Hero.module.css";
+import profilePhoto from "../../../assets/images/profile-photo.png";
 
-function Hero() {
+function Hero({ t }) {
   return (
-    <section id="home" className={styles.hero}>
+    <motion.section
+      id="home"
+      className={styles.hero}
+      initial={{ opacity: 0, translateY: 20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.content}>
@@ -16,12 +25,17 @@ function Hero() {
 
             <h1>{profile.name}</h1>
 
-            <p>{profile.description}</p>
+            <p>{t.hero.summary}</p>
+
+            <div className={styles.details}>
+              <span>{t.hero.description}</span>
+              <span>{t.hero.education}</span>
+            </div>
 
             <div className={styles.actions}>
-              <Button href="#projects">View Projects</Button>
+              <Button href="#projects">{t.hero.ctaProjects}</Button>
               <Button href="#contact" variant="secondary">
-                Contact Me
+                {t.hero.ctaContact}
               </Button>
             </div>
 
@@ -34,12 +48,16 @@ function Hero() {
             </div>
           </div>
 
-          <div className={styles.image} aria-hidden="true">
-            <div className={styles.avatar}>KMV</div>
+          <div className={styles.image}>
+            <img
+              className={styles.photo}
+              src={profilePhoto}
+              alt="Kauan Machado Vieira"
+            />
           </div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }
 

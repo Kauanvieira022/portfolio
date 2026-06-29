@@ -1,38 +1,43 @@
+﻿import { motion } from "framer-motion";
 import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
 import profile from "../../../data/profile";
 
 import styles from "./About.module.css";
 
-function About() {
+function About({ t }) {
   return (
-    <section id="about" className={styles.about}>
+    <motion.section
+      id="about"
+      className={styles.about}
+      initial={{ opacity: 0, translateY: 20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <Container>
-        <SectionTitle subtitle="About" title="Building with purpose and consistency" />
+        <SectionTitle subtitle={t.sectionSubtitles.about} title={t.about.title} />
 
         <div className={styles.grid}>
-          <p>
-            I am {profile.name}, a developer focused on creating modern, maintainable and scalable web applications.
-            My work combines frontend interfaces, backend logic and constant improvement through practical projects.
-          </p>
+          <p>{t.about.paragraph.replace("Kauan Machado Vieira", profile.name)}</p>
 
           <div className={styles.highlights}>
             <div>
-              <strong>Clean structure</strong>
-              <span>Components, data and styles separated by responsibility.</span>
+              <strong>{t.about.highlights.stack}</strong>
+              <span>{t.about.highlights.stackText}</span>
             </div>
             <div>
-              <strong>Product mindset</strong>
-              <span>This portfolio evolves as a real software product.</span>
+              <strong>{t.about.highlights.academic}</strong>
+              <span>{t.about.highlights.academicText}</span>
             </div>
             <div>
-              <strong>Continuous learning</strong>
-              <span>Focused on React, Node.js, Python and software engineering practices.</span>
+              <strong>{t.about.highlights.approach}</strong>
+              <span>{t.about.highlights.approachText}</span>
             </div>
           </div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   );
 }
 

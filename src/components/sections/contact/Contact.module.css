@@ -39,6 +39,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 1rem;
+  align-items: center;
 }
 
 @media (max-width: 900px) {

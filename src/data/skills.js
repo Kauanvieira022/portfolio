@@ -1,4 +1,4 @@
-const skills = [
+﻿const skills = [
   {
     category: "Frontend",
     items: ["React", "JavaScript", "HTML", "CSS", "CSS Modules", "Responsive UI"],
@@ -6,6 +6,10 @@ const skills = [
   {
     category: "Backend",
     items: ["Node.js", "Python", "REST APIs", "Authentication", "Databases"],
+  },
+  {
+    category: "Data & BI",
+    items: ["Power BI", "Data cleaning", "Spreadsheets", "Dashboards", "Automation"],
   },
   {
     category: "Tools",
