@@ -4,16 +4,16 @@
   role: "Full Stack Developer",
 
   description:
-    "I build modern web products and internal tools that connect interfaces, APIs, automation and data.",
+    "Full Stack Developer focused on building products that connect interfaces, APIs, automation and data.",
 
   summary:
-    "I turn product ideas into reliable digital experiences through thoughtful frontend development, robust backend services and practical data workflows.",
+    "I turn ideas into useful software with attention to clarity, maintainability and practical delivery.",
 
   education:
-    "Student of Information Systems at FESPPR, expected graduation in December 2029.",
+    "Information Systems student at FESPPR, expected graduation in December 2029.",
 
   focus:
-    "I work across frontend, backend and data, focusing on clean interfaces, dependable services and solutions that create measurable impact.",
+    "I work across frontend, backend and data, with a focus on clean interfaces, dependable services and solutions that solve real needs.",
 
   email: "kauanvieira022@gmail.com",
 

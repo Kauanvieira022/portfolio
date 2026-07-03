@@ -4,15 +4,13 @@ import skills from "../../../data/skills";
 
 import styles from "./Skills.module.css";
 
-function Skills() {
+function Skills({ t }) {
   return (
     <section id="skills" className={styles.skills}>
       <Container>
-        <SectionTitle subtitle="Skills" title="Technologies I work with" />
+        <SectionTitle subtitle={t.sectionSubtitles.skills} title={t.skills.title} />
 
-        <p className={styles.intro}>
-          My stack spans product interfaces, backend services, data workflows and tools that help me move from idea to delivery.
-        </p>
+        <p className={styles.intro}>{t.skills.intro}</p>
 
         <div className={styles.grid}>
           {skills.map((group) => (

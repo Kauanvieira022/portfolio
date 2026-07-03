@@ -1,5 +1,4 @@
-﻿import { motion } from "framer-motion";
-import Container from "../../ui/Container";
+﻿import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
 import profile from "../../../data/profile";
 
@@ -7,14 +6,7 @@ import styles from "./About.module.css";
 
 function About({ t }) {
   return (
-    <motion.section
-      id="about"
-      className={styles.about}
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <section id="about" className={styles.about}>
       <Container>
         <SectionTitle subtitle={t.sectionSubtitles.about} title={t.about.title} />
 
@@ -37,7 +29,7 @@ function About({ t }) {
           </div>
         </div>
       </Container>
-    </motion.section>
+    </section>
   );
 }
 
