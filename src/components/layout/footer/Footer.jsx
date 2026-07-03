@@ -4,7 +4,7 @@ import social from "../../../data/social";
 
 import styles from "./Footer.module.css";
 
-function Footer({ language, t }) {
+function Footer({ language }) {
   return (
     <footer className={styles.footer}>
       <Container>

@@ -1,67 +1,33 @@
-﻿import { motion } from "framer-motion";
-import Container from "../../ui/Container";
+﻿import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
 import skills from "../../../data/skills";
 
 import styles from "./Skills.module.css";
 
-function Skills({ t }) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, translateY: 20 },
-    visible: {
-      opacity: 1,
-      translateY: 0,
-      transition: { duration: 0.5 },
-    },
-  };
+function Skills() {
   return (
-    <motion.section
-      id="skills"
-      className={styles.skills}
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <section id="skills" className={styles.skills}>
       <Container>
-        <SectionTitle subtitle={t.sectionSubtitles.skills} title={t.skills.title} />
+        <SectionTitle subtitle="Skills" title="Technologies I work with" />
 
-        <p className={styles.intro}>{t.skills.intro}</p>
+        <p className={styles.intro}>
+          My stack spans product interfaces, backend services, data workflows and tools that help me move from idea to delivery.
+        </p>
 
-        <motion.div
-          className={styles.grid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
+        <div className={styles.grid}>
           {skills.map((group) => (
-            <motion.article
-              key={group.category}
-              className={styles.card}
-              variants={itemVariants}
-            >
+            <article key={group.category} className={styles.card}>
               <h3>{group.category}</h3>
               <div className={styles.list}>
                 {group.items.map((item) => (
                   <span key={item}>{item}</span>
                 ))}
               </div>
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
       </Container>
-    </motion.section>
+    </section>
   );
 }
 

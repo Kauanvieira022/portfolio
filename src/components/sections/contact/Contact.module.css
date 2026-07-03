@@ -1,5 +1,5 @@
-.contact {
-  padding: var(--space-6) 0;
+﻿.contact {
+  padding: calc(var(--space-6) - 0.25rem) 0;
 }
 
 .wrapper {
@@ -10,7 +10,7 @@
   padding: var(--space-5);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .wrapper span {
@@ -31,7 +31,7 @@
   max-width: 620px;
   margin-top: 1rem;
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .actions {
@@ -53,3 +53,4 @@
     justify-content: flex-start;
   }
 }
+

@@ -1,5 +1,5 @@
 ﻿.experience {
-  padding: var(--space-6) 0;
+  padding: calc(var(--space-6) - 0.5rem) 0;
 }
 
 .timeline {
@@ -9,10 +9,10 @@
 
 .item {
   position: relative;
-  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  padding: 1.45rem 1.45rem 1.45rem 1.95rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(255, 255, 255, 0.015));
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .item::before {
@@ -23,14 +23,14 @@
   width: 4px;
   height: calc(100% - 3rem);
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--color-primary), rgba(139, 92, 246, 0.25));
+  background: rgba(111, 127, 232, 0.9);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  gap: 1.25rem;
+  margin-bottom: 0.95rem;
 }
 
 .period {
@@ -64,7 +64,7 @@
 .item p {
   max-width: 860px;
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .responsibilities {
@@ -126,3 +126,4 @@
     font-size: 0.9rem;
   }
 }
+
