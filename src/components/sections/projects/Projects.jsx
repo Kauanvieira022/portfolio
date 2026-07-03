@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { FiArrowUpRight, FiGithub } from "react-icons/fi";
+
 import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
 import projects from "../../../data/projects";
@@ -6,26 +8,7 @@ import projects from "../../../data/projects";
 import styles from "./Projects.module.css";
 
 function Projects({ language, t }) {
-  const items = projects[language] ?? projects.en;
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, translateY: 20 },
-    visible: {
-      opacity: 1,
-      translateY: 0,
-      transition: { duration: 0.5 },
-    },
-  };
+  const project = projects[language] ?? projects.en;
 
   return (
     <motion.section
@@ -33,60 +16,65 @@ function Projects({ language, t }) {
       className={styles.projects}
       initial={{ opacity: 0, translateY: 20 }}
       whileInView={{ opacity: 1, translateY: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <Container>
         <SectionTitle subtitle={t.sectionSubtitles.projects} title={t.projects.title} />
-
         <p className={styles.intro}>{t.projects.intro}</p>
 
-        <motion.article
-          key={`featured-${language}`}
-          className={styles.featured}
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className={styles.featuredContent}>
-            <span className={styles.featuredTag}>{t.projects.featuredTag}</span>
-            <h3>{t.projects.featuredTitle}</h3>
-            <p>{t.projects.featuredText}</p>
-          </div>
-          <div className={styles.featuredStack}>
-            <span>React</span>
-            <span>Node.js</span>
-            <span>Python</span>
-            <span>Power BI</span>
-          </div>
-        </motion.article>
-
-        <motion.div
-          key={`grid-${language}`}
-          className={styles.grid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {items.map((project) => (
-            <motion.article
-              key={project.title}
-              className={styles.card}
-              variants={itemVariants}
-            >
+        <article className={styles.caseStudy}>
+          <header className={styles.caseHeader}>
+            <div>
               <span className={styles.status}>{project.status}</span>
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className={styles.tags}>
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+            </div>
+            <p>{project.description}</p>
+          </header>
+
+          <div className={styles.caseBody}>
+            <div className={styles.decisions}>
+              <div>
+                <span>{t.projects.challengeLabel}</span>
+                <p>{project.challenge}</p>
               </div>
-            </motion.article>
-          ))}
-        </motion.div>
+              <div>
+                <span>{t.projects.solutionLabel}</span>
+                <p>{project.solution}</p>
+              </div>
+            </div>
+
+            <div className={styles.evidence}>
+              <span>{t.projects.highlightsLabel}</span>
+              <ul>
+                {project.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <footer className={styles.caseFooter}>
+            <div className={styles.tags}>
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+
+            <div className={styles.links}>
+              <a href={project.links.live}>
+                {t.projects.liveLink}
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
+              <a href={project.links.source} target="_blank" rel="noopener noreferrer">
+                <FiGithub aria-hidden="true" />
+                {t.projects.sourceLink}
+              </a>
+            </div>
+          </footer>
+        </article>
+
+        <p className={styles.note}>{t.projects.evidenceNote}</p>
       </Container>
     </motion.section>
   );

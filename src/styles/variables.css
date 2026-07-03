@@ -3,16 +3,16 @@
      COLORS
   =========================== */
 
-  --color-background: #0b1020;
-  --color-surface: #141b2d;
-  --color-surface-hover: #1a2338;
+  --color-background: #101210;
+  --color-surface: #171a18;
+  --color-surface-hover: #202420;
 
-  --color-text: #f5f7fb;
-  --color-text-secondary: #aab2c5;
+  --color-text: #f2f1ec;
+  --color-text-secondary: #a7aca5;
 
-  --color-primary: #6f7fe8;
+  --color-primary: #a8c5ad;
 
-  --color-border: #26314a;
+  --color-border: #303630;
 
   --color-success: #22c55e;
   --color-danger: #ef4444;
@@ -21,7 +21,8 @@
      TYPOGRAPHY
   =========================== */
 
-  --font-family: "Inter", sans-serif;
+  --font-family: "IBM Plex Sans", sans-serif;
+  --font-family-mono: "IBM Plex Mono", monospace;
 
   --font-size-xs: .875rem;
   --font-size-sm: 1rem;
@@ -44,15 +45,15 @@
      BORDER RADIUS
   =========================== */
 
-  --radius-sm: .5rem;
-  --radius-md: .75rem;
-  --radius-lg: 1rem;
+  --radius-sm: .25rem;
+  --radius-md: .375rem;
+  --radius-lg: .5rem;
 
   /* ===========================
      LAYOUT
   =========================== */
 
-  --container: 1200px;
+  --container: 1160px;
 
   /* ===========================
      TRANSITIONS

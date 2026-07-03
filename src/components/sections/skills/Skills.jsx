@@ -4,7 +4,9 @@ import skills from "../../../data/skills";
 
 import styles from "./Skills.module.css";
 
-function Skills({ t }) {
+function Skills({ language, t }) {
+  const groups = skills[language] ?? skills.en;
+
   return (
     <section id="skills" className={styles.skills}>
       <Container>
@@ -13,7 +15,7 @@ function Skills({ t }) {
         <p className={styles.intro}>{t.skills.intro}</p>
 
         <div className={styles.grid}>
-          {skills.map((group) => (
+          {groups.map((group) => (
             <article key={group.category} className={styles.card}>
               <h3>{group.category}</h3>
               <div className={styles.list}>

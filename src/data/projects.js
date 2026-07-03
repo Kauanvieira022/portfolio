@@ -1,50 +1,46 @@
-﻿const projects = {
-  en: [
-    {
-      title: "Personal Portfolio",
-      description:
-        "This portfolio is built as a real product, with reusable components, modular styling and a structure designed to grow with my career.",
-      tags: ["React", "Vite", "CSS Modules"],
-      status: "In development",
+const projects = {
+  en: {
+    title: "Personal Portfolio",
+    status: "In active development",
+    description:
+      "A bilingual portfolio built as a maintainable product, bringing together my professional background, technical profile and current learning path.",
+    challenge:
+      "Present a multidisciplinary profile across software, data and business operations without overstating work that is still in progress.",
+    solution:
+      "A modular React experience with centralized content, responsive layouts and a visual system designed to evolve alongside my career.",
+    highlights: [
+      "Reusable components and scoped CSS Modules",
+      "Portuguese and English content with saved language preference",
+      "Responsive navigation and layouts",
+      "Automated production deployment through Vercel",
+    ],
+    tags: ["React", "Vite", "CSS Modules", "Framer Motion"],
+    links: {
+      live: "/",
+      source: "https://github.com/Kauanvieira022/portfolio",
     },
-    {
-      title: "Full Stack Studies",
-      description:
-        "Practical work around web applications, API design and backend workflows, focused on reliability, clarity and maintainable code.",
-      tags: ["Node.js", "Python", "APIs"],
-      status: "In progress",
+  },
+  pt: {
+    title: "Portfólio Pessoal",
+    status: "Em evolução contínua",
+    description:
+      "Um portfólio bilíngue construído como produto, reunindo minha trajetória profissional, perfil técnico e caminho atual de aprendizado.",
+    challenge:
+      "Apresentar um perfil multidisciplinar entre software, dados e operações de negócio sem exagerar trabalhos que ainda estão em desenvolvimento.",
+    solution:
+      "Uma experiência modular em React, com conteúdo centralizado, layouts responsivos e um sistema visual preparado para evoluir junto com a minha carreira.",
+    highlights: [
+      "Componentes reutilizáveis e estilos isolados com CSS Modules",
+      "Conteúdo em português e inglês com preferência de idioma salva",
+      "Navegação e layouts responsivos",
+      "Deploy de produção automatizado pela Vercel",
+    ],
+    tags: ["React", "Vite", "CSS Modules", "Framer Motion"],
+    links: {
+      live: "/",
+      source: "https://github.com/Kauanvieira022/portfolio",
     },
-    {
-      title: "Data & Automation Experiments",
-      description:
-        "Exploring dashboards, data cleaning and process automation to strengthen analytical thinking and operational problem solving.",
-      tags: ["Power BI", "Automation", "Data"],
-      status: "Ongoing",
-    },
-  ],
-  pt: [
-    {
-      title: "Portfólio Pessoal",
-      description:
-        "Este portfólio foi construído como um produto real, com componentes reutilizáveis, estilos modulares e uma estrutura pensada para crescer junto com a minha carreira.",
-      tags: ["React", "Vite", "CSS Modules"],
-      status: "Em desenvolvimento",
-    },
-    {
-      title: "Estudos Full Stack",
-      description:
-        "Trabalhos práticos envolvendo aplicações web, design de APIs e fluxos backend, com foco em confiabilidade, clareza e código fácil de manter.",
-      tags: ["Node.js", "Python", "APIs"],
-      status: "Em andamento",
-    },
-    {
-      title: "Experimentos de Dados e Automação",
-      description:
-        "Explorando dashboards, limpeza de dados e automação de processos para fortalecer o raciocínio analítico e a resolução prática de problemas.",
-      tags: ["Power BI", "Automação", "Dados"],
-      status: "Em andamento",
-    },
-  ],
+  },
 };
 
 export default projects;

@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background: rgba(11, 16, 32, 0.84);
+  background: rgba(16, 18, 16, 0.9);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(14px);
   z-index: 1000;
@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  min-height: 80px;
+  min-height: 76px;
 }
 
 .logo {
@@ -27,6 +27,7 @@
 }
 
 .logo span {
+  font-family: var(--font-family-mono);
   font-size: 0.8rem;
   color: var(--color-text-secondary);
 }
@@ -39,12 +40,13 @@
 .menu a,
 .actions a {
   color: var(--color-text-secondary);
+  font-size: 0.92rem;
   transition: var(--transition);
 }
 
 .menu a:hover,
 .actions a:hover {
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 .actions {
@@ -57,7 +59,7 @@
 .langToggle {
   padding: 0.5rem 0.8rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--color-text-secondary);
   cursor: pointer;
@@ -72,7 +74,7 @@
 .resume {
   padding: 0.5rem 0.8rem;
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
 }
 
 .hamburger {
@@ -96,11 +98,11 @@
 
   .menu {
     position: fixed;
-    top: 80px;
+    top: 76px;
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(11, 16, 32, 0.96);
+    background: rgba(16, 18, 16, 0.98);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--color-border);
     padding: 1rem 0;

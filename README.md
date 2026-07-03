@@ -1,20 +1,17 @@
-# Portfolio
+# Portfólio — Kauan Machado Vieira
 
-Portfolio pessoal desenvolvido com React e Vite, com foco em arquitetura limpa, componentes reutilizaveis e evolucao continua.
+Portfólio pessoal desenvolvido para apresentar minha trajetória profissional, formação e atuação como desenvolvedor Full Stack.
 
-Este projeto tem como objetivo apresentar minha trajetoria profissional, habilidades tecnicas e projetos, alem de demonstrar como estruturo e construo aplicacoes web modernas.
+O projeto também funciona como um estudo prático de produto: conteúdo bilíngue, componentes reutilizáveis, interface responsiva e publicação contínua na Vercel.
 
-## Status
+## Visão geral
 
-Projeto em desenvolvimento.
-
-Base atual:
-
-- Configuracao inicial com React + Vite
-- Estrutura modular de pastas
-- Estilos globais e variaveis de design
-- Componentes reutilizaveis iniciais
-- Navbar e Hero Section em desenvolvimento
+- Apresentação profissional e formação em Sistemas de Informação na FESPPR
+- Experiências em tecnologia, dados, automação e operações financeiras
+- Stack organizada por frontend, backend, dados e ferramentas
+- Conteúdo disponível em português e inglês
+- Navegação responsiva para desktop e dispositivos móveis
+- Deploy automático a partir da branch `main`
 
 ## Tecnologias
 
@@ -26,94 +23,54 @@ Base atual:
 - React Icons
 - ESLint
 
-## Estrutura do projeto
+## Estrutura
 
-```txt
+```text
 src/
-|-- assets/
+|-- assets/          # Imagens e recursos visuais
 |-- components/
-|   |-- layout/
-|   |-- sections/
-|   `-- ui/
-|-- data/
-|-- styles/
+|   |-- layout/      # Navbar e Footer
+|   |-- sections/    # Seções principais da página
+|   `-- ui/          # Componentes reutilizáveis
+|-- data/            # Conteúdo e configurações
+|-- styles/          # Reset, variáveis e estilos globais
 |-- App.jsx
-|-- main.jsx
-`-- index.css
+`-- main.jsx
 ```
 
-## Arquitetura
+O conteúdo foi separado da camada visual para facilitar manutenção, tradução e futuras atualizações. Cada seção possui seu próprio componente e módulo de estilos.
 
-O projeto segue uma arquitetura baseada em componentes, separando responsabilidades entre:
-
-- `layout`: componentes estruturais da pagina, como Navbar e Footer
-- `sections`: secoes principais do portfolio
-- `ui`: componentes reutilizaveis de interface
-- `data`: conteudos e configuracoes centralizadas
-- `styles`: reset, variaveis, estilos globais e animacoes
-
-Essa organizacao facilita manutencao, escalabilidade e evolucao por etapas.
-
-## Roadmap
-
-### Base do projeto
-
-- [x] Criar projeto com React + Vite
-- [x] Configurar Git
-- [x] Criar estrutura inicial de pastas
-- [x] Configurar estilos globais
-- [x] Criar primeiros componentes reutilizaveis
-
-### Interface
-
-- [x] Navbar
-- [x] Hero Section
-- [ ] About
-- [ ] Skills
-- [ ] Experience
-- [ ] Projects
-- [ ] Contact
-- [ ] Footer
-
-### Melhorias futuras
-
-- [ ] Responsividade completa
-- [ ] Tema escuro refinado
-- [ ] Animacoes com Framer Motion
-- [ ] Integracao com GitHub API
-- [ ] SEO
-- [ ] Deploy automatico
-
-## Como executar
-
-Instale as dependencias:
+## Executando localmente
 
 ```bash
+git clone https://github.com/Kauanvieira022/portfolio.git
+cd portfolio
 npm install
-```
-
-Execute o projeto em ambiente de desenvolvimento:
-
-```bash
 npm run dev
 ```
 
-Gere a versao de producao:
+Para validar a versão de produção:
 
 ```bash
+npm run lint
 npm run build
 ```
 
-## Objetivos
+## Status
 
-- Apresentar minhas habilidades tecnicas
-- Reunir projetos pessoais e academicos
-- Praticar boas praticas de engenharia de software
-- Evoluir o portfolio como um produto real
+O portfólio está publicado e continua em evolução.
+
+Próximas etapas planejadas:
+
+- Substituir o currículo provisório por uma versão completa
+- Aprimorar metadados para compartilhamento e SEO
+- Sincronizar o idioma selecionado com os atributos da página
+- Adicionar novos projetos conforme forem concluídos
 
 ## Autor
 
 Kauan Machado Vieira
 
-- GitHub: [Kauanvieira022](https://github.com/Kauanvieira022)
-- LinkedIn: [kauan-machado-vieira](https://www.linkedin.com/in/kauan-machado-vieira-8b8632251/)
+- [GitHub](https://github.com/Kauanvieira022)
+- [LinkedIn](https://www.linkedin.com/in/kauan-machado-vieira-8b8632251/)
+- [E-mail](mailto:kauanvieira022@gmail.com)

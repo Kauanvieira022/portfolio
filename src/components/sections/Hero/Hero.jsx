@@ -21,7 +21,10 @@ function Hero({ t }) {
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.content}>
-            <span className={styles.badge}>{profile.role}</span>
+            <div className={styles.eyebrow}>
+              <span className={styles.badge}>{profile.role}</span>
+              <span className={styles.location}>{t.hero.location}</span>
+            </div>
 
             <h1>{profile.name}</h1>
 

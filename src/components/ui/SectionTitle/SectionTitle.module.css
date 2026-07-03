@@ -4,15 +4,26 @@
 
 .wrapper span {
     color: var(--color-primary);
+    font-family: var(--font-family-mono);
     font-size: 0.9rem;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0;
     text-transform: uppercase;
 }
 
 .wrapper h2 {
     margin-top: 0.5rem;
-    font-size: clamp(1.9rem, 3vw, 2.4rem);
+    font-size: 2.4rem;
     color: var(--color-text);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .wrapper h2 {
+        font-size: 1.9rem;
+    }
 }

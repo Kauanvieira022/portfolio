@@ -5,7 +5,7 @@
   min-height: 48px;
   padding: 0.9rem 1.6rem;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   color: var(--color-text);
   font-weight: 700;
   line-height: 1;
@@ -15,18 +15,17 @@
 }
 
 .button:hover {
-  transform: translateY(-2px);
   background: var(--color-surface-hover);
 }
 
 .primary {
   background: var(--color-primary);
-  color: white;
+  color: #111612;
   border-color: transparent;
 }
 
 .primary:hover {
-  filter: brightness(1.04);
+  background: #bad3be;
 }
 
 .secondary {

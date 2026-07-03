@@ -22,13 +22,14 @@ const translations = {
         "I focus on clean delivery, reliable systems and web experiences that feel clear to use and easy to maintain.",
       education:
         "Information Systems student at FESPPR, expected graduation in December 2029.",
+      location: "Curitiba, Paraná, Brazil",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
     },
     about: {
       title: "What I do and how I work",
       paragraph:
-        "I am Kauan Machado Vieira, a Full Stack Developer who likes turning product ideas into useful software. I work across frontend, backend and data, with attention to clarity, maintainability and the small details that make an interface feel solid.",
+        "I am Kauan Machado Vieira, a Full Stack Developer with a professional background that started in finance and business operations. That experience gave me a practical understanding of processes, corporate systems and user needs that I now apply across frontend, backend, data and automation.",
       highlights: {
         stack: "Core stack",
         stackText: "React, Node.js, Python, REST APIs, Power BI and automation workflows.",
@@ -48,13 +49,15 @@ const translations = {
       title: "Professional experience",
     },
     projects: {
-      title: "Selected studies and ongoing work",
+      title: "A project you can inspect",
       intro:
-        "I am keeping this section focused on studies, technical experiments and work in progress, so the portfolio stays honest about where I am today.",
-      featuredTitle: "Current focus",
-      featuredText:
-        "At the moment I am building experience around full-stack development, data workflows and interfaces that support real operational needs.",
-      featuredTag: "Currently focused on",
+        "Until new cases are ready, this portfolio is the clearest public example of how I structure interfaces, content and frontend code.",
+      challengeLabel: "Challenge",
+      solutionLabel: "Approach",
+      highlightsLabel: "What is already working",
+      liveLink: "View project",
+      sourceLink: "Source code",
+      evidenceNote: "New projects will be added here as they are completed.",
     },
     contact: {
       title: "Contact",
@@ -87,13 +90,14 @@ const translations = {
         "Tenho foco em entregas limpas, sistemas confiáveis e experiências web claras de usar e fáceis de manter.",
       education:
         "Estudante de Sistemas de Informação na FESPPR, com conclusão prevista para dezembro de 2029.",
+      location: "Curitiba, Paraná, Brasil",
       ctaProjects: "Ver Projetos",
       ctaContact: "Fale Comigo",
     },
     about: {
       title: "O que faço e como trabalho",
       paragraph:
-        "Sou Kauan Machado Vieira, desenvolvedor Full Stack, e gosto de transformar ideias de produto em software útil. Trabalho com frontend, backend e dados, com atenção à clareza, à manutenção e aos detalhes que tornam uma interface bem resolvida.",
+        "Sou Kauan Machado Vieira, desenvolvedor Full Stack com uma trajetória profissional iniciada em finanças e operações de negócio. Essa experiência me deu uma visão prática de processos, sistemas corporativos e necessidades dos usuários, que hoje aplico em frontend, backend, dados e automação.",
       highlights: {
         stack: "Stack principal",
         stackText: "React, Node.js, Python, APIs REST, Power BI e automações.",
@@ -113,13 +117,15 @@ const translations = {
       title: "Experiência profissional",
     },
     projects: {
-      title: "Estudos selecionados e trabalhos em andamento",
+      title: "Um projeto que você pode verificar",
       intro:
-        "Mantenho esta seção focada em estudos, experimentos técnicos e trabalhos em andamento, para que o portfólio represente com honestidade o momento atual da minha carreira.",
-      featuredTitle: "Foco atual",
-      featuredText:
-        "No momento, estou ampliando minha experiência em desenvolvimento full stack, fluxos de dados e interfaces que atendem a necessidades operacionais reais.",
-      featuredTag: "Atualmente focado em",
+        "Enquanto novos cases não estão prontos, este portfólio é o exemplo público mais claro de como organizo interfaces, conteúdo e código frontend.",
+      challengeLabel: "Desafio",
+      solutionLabel: "Abordagem",
+      highlightsLabel: "O que já está funcionando",
+      liveLink: "Ver projeto",
+      sourceLink: "Código-fonte",
+      evidenceNote: "Novos projetos serão adicionados aqui conforme forem concluídos.",
     },
     contact: {
       title: "Contato",
