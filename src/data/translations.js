@@ -1,4 +1,4 @@
-﻿const translations = {
+const translations = {
   en: {
     sectionSubtitles: {
       about: "About",
@@ -68,64 +68,64 @@
     sectionSubtitles: {
       about: "Sobre",
       skills: "Skills",
-      experience: "ExperiÃªncia",
+      experience: "Experiência",
       projects: "Projetos",
     },
     nav: {
-      home: "InÃ­cio",
+      home: "Início",
       about: "Sobre",
       skills: "Skills",
-      experience: "ExperiÃªncia",
+      experience: "Experiência",
       projects: "Projetos",
       contact: "Contato",
-      resume: "CurrÃ­culo",
+      resume: "Currículo",
     },
     hero: {
       summary:
-        "Desenvolvo produtos full stack que conectam interfaces, APIs, automaÃ§Ã£o e dados de forma prÃ¡tica.",
+        "Desenvolvo produtos full stack que conectam interfaces, APIs, automação e dados de forma prática.",
       description:
-        "Tenho foco em entregas limpas, sistemas confiÃ¡veis e experiÃªncias web que sejam claras de usar e fÃ¡ceis de manter.",
+        "Tenho foco em entregas limpas, sistemas confiáveis e experiências web claras de usar e fáceis de manter.",
       education:
-        "Estudante de Sistemas de InformaÃ§Ã£o na FESPPR, previsÃ£o de conclusÃ£o em dezembro de 2029.",
+        "Estudante de Sistemas de Informação na FESPPR, com conclusão prevista para dezembro de 2029.",
       ctaProjects: "Ver Projetos",
       ctaContact: "Fale Comigo",
     },
     about: {
-      title: "O que faÃ§o e como trabalho",
+      title: "O que faço e como trabalho",
       paragraph:
-        "Sou Kauan Machado Vieira, um Full Stack Developer que gosta de transformar ideias de produto em software Ãºtil. Trabalho com frontend, backend e dados, com atenÃ§Ã£o Ã  clareza, Ã  manutenÃ§Ã£o e aos detalhes que fazem uma interface parecer bem resolvida.",
+        "Sou Kauan Machado Vieira, desenvolvedor Full Stack, e gosto de transformar ideias de produto em software útil. Trabalho com frontend, backend e dados, com atenção à clareza, à manutenção e aos detalhes que tornam uma interface bem resolvida.",
       highlights: {
         stack: "Stack principal",
-        stackText: "React, Node.js, Python, APIs REST, Power BI e automaÃ§Ãµes.",
-        academic: "Caminho acadÃªmico",
-        academicText: "Estudante de Sistemas de InformaÃ§Ã£o na FESPPR, previsÃ£o de conclusÃ£o em dezembro de 2029.",
+        stackText: "React, Node.js, Python, APIs REST, Power BI e automações.",
+        academic: "Formação acadêmica",
+        academicText: "Sistemas de Informação na FESPPR, com conclusão prevista para dezembro de 2029.",
         approach: "Abordagem de trabalho",
         approachText:
-          "Prefiro estruturas simples, decisÃµes claras e soluÃ§Ãµes que resolvem um problema real em vez de apenas parecerem completas.",
+          "Prefiro estruturas simples, decisões claras e soluções que resolvem problemas reais, em vez de apenas parecerem completas.",
       },
     },
     skills: {
-      title: "Principais forÃ§as em desenvolvimento de produtos",
+      title: "Principais competências em desenvolvimento de produtos",
       intro:
-        "Meu trabalho passa por desenvolvimento de interfaces, implementaÃ§Ã£o backend, fluxos de dados e automaÃ§Ã£o. Estas sÃ£o as Ã¡reas que mais uso para construir software prÃ¡tico.",
+        "Meu trabalho envolve desenvolvimento de interfaces, implementação backend, fluxos de dados e automação. Estas são as áreas que mais utilizo para construir software prático.",
     },
     experience: {
-      title: "ExperiÃªncia profissional",
+      title: "Experiência profissional",
     },
     projects: {
       title: "Estudos selecionados e trabalhos em andamento",
       intro:
-        "Mantenho esta seÃ§Ã£o focada em estudos, experimentos tÃ©cnicos e trabalhos em progresso, para o portfÃ³lio continuar honesto sobre onde estou hoje.",
+        "Mantenho esta seção focada em estudos, experimentos técnicos e trabalhos em andamento, para que o portfólio represente com honestidade o momento atual da minha carreira.",
       featuredTitle: "Foco atual",
       featuredText:
-        "No momento estou construindo experiÃªncia em desenvolvimento full stack, fluxos de dados e interfaces que apoiam necessidades operacionais reais.",
+        "No momento, estou ampliando minha experiência em desenvolvimento full stack, fluxos de dados e interfaces que atendem a necessidades operacionais reais.",
       featuredTag: "Atualmente focado em",
     },
     contact: {
       title: "Contato",
-      heading: "Vamos construir algo com propÃ³sito",
+      heading: "Vamos construir algo com propósito",
       paragraph:
-        "Estou aberto a oportunidades, colaboraÃ§Ãµes e conversas sobre desenvolvimento web e engenharia de software.",
+        "Estou aberto a oportunidades, colaborações e conversas sobre desenvolvimento web e engenharia de software.",
       button: "Enviar E-mail",
     },
   },
