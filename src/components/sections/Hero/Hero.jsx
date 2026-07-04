@@ -6,7 +6,7 @@ import Button from "../../ui/Button";
 import Container from "../../ui/Container";
 
 import styles from "./Hero.module.css";
-import profilePhoto from "../../../assets/images/profile-photo.png";
+import profilePhoto from "../../../assets/images/profile-photo.webp";
 
 function Hero({ t }) {
   return (
@@ -42,7 +42,7 @@ function Hero({ t }) {
               </Button>
             </div>
 
-            <div className={styles.techStack} aria-label="Main technologies">
+            <div className={styles.techStack} aria-label={t.hero.technologiesLabel}>
               {technologies.map((tech) => (
                 <span key={tech} className={styles.tech}>
                   {tech}
@@ -56,6 +56,10 @@ function Hero({ t }) {
               className={styles.photo}
               src={profilePhoto}
               alt="Kauan Machado Vieira"
+              width="640"
+              height="640"
+              decoding="async"
+              fetchPriority="high"
             />
           </div>
         </div>

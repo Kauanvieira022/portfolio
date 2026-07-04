@@ -14,6 +14,12 @@ const translations = {
       projects: "Projects",
       contact: "Contact",
       resume: "Resume",
+      navigation: "Main navigation",
+      language: "Select language",
+      portuguese: "Portuguese",
+      english: "English",
+      openMenu: "Open navigation menu",
+      closeMenu: "Close navigation menu",
     },
     hero: {
       summary:
@@ -23,6 +29,7 @@ const translations = {
       education:
         "Information Systems student at FESPPR, expected graduation in December 2029.",
       location: "Curitiba, Paraná, Brazil",
+      technologiesLabel: "Main technologies",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
     },
@@ -82,6 +89,12 @@ const translations = {
       projects: "Projetos",
       contact: "Contato",
       resume: "Currículo",
+      navigation: "Navegação principal",
+      language: "Selecionar idioma",
+      portuguese: "Português",
+      english: "Inglês",
+      openMenu: "Abrir menu de navegação",
+      closeMenu: "Fechar menu de navegação",
     },
     hero: {
       summary:
@@ -91,6 +104,7 @@ const translations = {
       education:
         "Estudante de Sistemas de Informação na FESPPR, com conclusão prevista para dezembro de 2029.",
       location: "Curitiba, Paraná, Brasil",
+      technologiesLabel: "Principais tecnologias",
       ctaProjects: "Ver Projetos",
       ctaContact: "Fale Comigo",
     },

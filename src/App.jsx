@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("portfolio-language", language);
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
   }, [language]);
 
   const t = useMemo(() => translations[language], [language]);

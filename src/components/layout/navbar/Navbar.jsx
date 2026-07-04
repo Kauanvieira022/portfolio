@@ -1,14 +1,43 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import styles from "./Navbar.module.css";
 
 import Container from "../../ui/Container";
-
 import navigation from "../../../data/navigation";
 import profile from "../../../data/profile";
 
+import styles from "./Navbar.module.css";
+
+function LanguageSwitcher({ language, setLanguage, t }) {
+  return (
+    <div className={styles.languageSwitcher} role="group" aria-label={t.nav.language}>
+      <button
+        type="button"
+        className={language === "pt" ? styles.activeLanguage : ""}
+        onClick={() => setLanguage("pt")}
+        aria-label={t.nav.portuguese}
+        aria-pressed={language === "pt"}
+        lang="pt-BR"
+      >
+        PT
+      </button>
+      <button
+        type="button"
+        className={language === "en" ? styles.activeLanguage : ""}
+        onClick={() => setLanguage("en")}
+        aria-label={t.nav.english}
+        aria-pressed={language === "en"}
+        lang="en"
+      >
+        EN
+      </button>
+    </div>
+  );
+}
+
 function Navbar({ language, setLanguage, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef(null);
+  const firstMenuLinkRef = useRef(null);
 
   const labels = {
     home: t.nav.home,
@@ -19,6 +48,24 @@ function Navbar({ language, setLanguage, t }) {
     contact: t.nav.contact,
   };
 
+  useEffect(() => {
+    if (!menuOpen) {
+      return undefined;
+    }
+
+    firstMenuLinkRef.current?.focus();
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [menuOpen]);
+
   const handleNavClick = () => {
     setMenuOpen(false);
   };
@@ -26,30 +73,44 @@ function Navbar({ language, setLanguage, t }) {
   return (
     <header className={styles.header}>
       <Container>
-        <nav className={styles.nav}>
-          <div className={styles.logo}>
+        <nav className={styles.nav} aria-label={t.nav.navigation}>
+          <a className={styles.logo} href="#home" onClick={handleNavClick}>
             <h2>{profile.name}</h2>
             <span>{profile.role}</span>
-          </div>
+          </a>
 
-          <ul className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}>
-            {navigation.map((item) => (
+          <ul
+            id="primary-navigation"
+            className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}
+          >
+            {navigation.map((item, index) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} onClick={handleNavClick}>
+                <a
+                  ref={index === 0 ? firstMenuLinkRef : undefined}
+                  href={`#${item.id}`}
+                  onClick={handleNavClick}
+                >
                   {labels[item.id] ?? item.label}
                 </a>
               </li>
             ))}
+
+            <li className={styles.mobileActions}>
+              <LanguageSwitcher language={language} setLanguage={setLanguage} t={t} />
+              <div className={styles.mobileLinks}>
+                <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                  GitHub
+                </a>
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+                <a href="/resume.pdf">{t.nav.resume}</a>
+              </div>
+            </li>
           </ul>
 
           <div className={styles.actions}>
-            <button
-              type="button"
-              className={styles.langToggle}
-              onClick={() => setLanguage(language === "en" ? "pt" : "en")}
-            >
-              {language === "pt" ? "Português" : "English"}
-            </button>
+            <LanguageSwitcher language={language} setLanguage={setLanguage} t={t} />
             <a href={profile.github} target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
@@ -62,12 +123,15 @@ function Navbar({ language, setLanguage, t }) {
           </div>
 
           <button
+            ref={menuButtonRef}
             type="button"
             className={styles.hamburger}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setMenuOpen((current) => !current)}
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
+            aria-controls="primary-navigation"
+            aria-expanded={menuOpen}
           >
-            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {menuOpen ? <FiX size={24} aria-hidden="true" /> : <FiMenu size={24} aria-hidden="true" />}
           </button>
         </nav>
       </Container>
