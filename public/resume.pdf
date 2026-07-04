@@ -1,21 +1,118 @@
 %PDF-1.4
-1 0 obj<< /Type /Catalog /Pages 2 0 R >>endobj
-2 0 obj<< /Type /Pages /Kids [3 0 R] /Count 1 >>endobj
-3 0 obj<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>endobj
-4 0 obj<< /Length 44 >>stream
-BT /F1 24 Tf 72 720 Td (Kauan Machado Vieira - Resume) Tj ET
-endstream
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 7 0 R /F4 8 0 R
+>>
 endobj
-5 0 obj<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (mailto:kauanvieira022@gmail.com)
+>> /Border [ 0 0 0 ] /Rect [ 142.2866 704.26 243.573 714.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.linkedin.com/in/kauan-machado-vieira-8b8632251/)
+>> /Border [ 0 0 0 ] /Rect [ 250.2642 704.26 281.2602 714.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/Kauanvieira022)
+>> /Border [ 0 0 0 ] /Rect [ 287.9514 704.26 313.4698 714.1 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-BoldOblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/Kauanvieira022/portfolio)
+>> /Border [ 0 0 0 ] /Rect [ 83.649 275.63 111.9682 286.55 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 9 0 R ] /Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/PageMode /UseNone /Pages 13 0 R /Type /Catalog
+>>
+endobj
+12 0 obj
+<<
+/Author () /CreationDate (D:20260704184827-03'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260704184827-03'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Desenvolvedor Full Stack) /Title (Curr\355culo - Kauan Machado Vieira) /Trapped /False
+>>
+endobj
+13 0 obj
+<<
+/Count 1 /Kids [ 10 0 R ] /Type /Pages
+>>
+endobj
+14 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2615
+>>
+stream
+Gb!;fbBDW"'&EF8C?_-21OP)@X@BY[`#^Fl-)G5ihEW>;+X%.L81NFUq=lB=,YcCd*o6+'*1uF`$E,FRh0TNk"Xa4Ol7km3/uS4,`WF><kn@1%iPP4.qU;cXc`HD,cSbjo*Rj63([uL`$r&8=JmlbK$h1iF=TO?S)%L79j'+33EGQS127DnnOjF%p8s7#@6jjWKpk;Qla?O)/)5dFudlu^Ik1#]8=Okp0km+?nL?!E//jA#qr9(hbg@4CL/PA*9b>3*RCRW^g`KM$r\U^/)8RPGXkR2cnCG[I.5d)_`8ff#)a8ZVS$GC#fU?[rF7s"GYSaA/bFDI(!ljBOoQ76[5@1Nb])oM2_cOI^09ddku),;;]TO2Ye<=2d2)1`/4NR:GS!g<'n?RZr>^W:r.<#eWerqAN$/28??lDr0HpFQ2.j4eD1j7fYM;"!kN)[>#cQWJe%X>k05F9L+9R"hfq`i@U%gn/s4%+38Wc0]%^48daChd`#q)O=ILms=I<0Ai<<Ja8dH"uFUA(kH=S!K>p.Aa7GfG\.c`g]UmZXi%`QiHrTk]BpGqG0C"E9)3$j?[(TO"e$6=9X97:9OYg/Ju0f[YA^`p0%t$,&\.($7\ar.E,gI.[\SL<3hDm2MuZS'ChDp53l>bTh<(7hMW\Lp\)g/UhhqZa3Y9L,8!?F?.i!#KCVYI3$Nc#)T4rjd3^QX7`%mLt0o3K5UE/`)dHlH11nl:llME)tlcIMSV;Ms1F5AZ$YFU]`=E6\7[Sg^J<8PaD.NDDa_D!NcU!-.Lbn>uu`h)71/]7:jV_,&PZbV&SDm+nJ;1JH+=SBe9gYQJ%=gj<XEq5GP6c7Xc35,S:SVkkn.Q_#3)pW@)a-=g-IjnH&.K+QM+JarFM2DeuOVO9PJh?NcL[!a2"':\CH@Q$WbCn$gAN7DK,*?'`I*&^bX[p/fEaIrS>+WmW9.W>M&T-2LMW:6+aCAt47bXfa8/<0fP"e$\aa(KX3`U06MSZ$b83-p*HVWQ`^'CeQT$6rpWmi\?O)oL8E8PC!T`YToQh26]J:[kR@Cc"9lb+PMqpp?:XF,^SH[PJQRS6K7@frTA;cX/b-cc&:+-0eX8<hI24@k57/inN)W?.-W4"+DB]N?;2X.52q<2MWVbAi20c\aKrjZTbj_cI]+o;iT\D#]![rqNokW[!n^o?=t$Bg'MSn*"1SF[8*a'WJ'cgC$0EQ0U.k'I-^K,h..@U#pf1aOHb:/t$QKUPpRJcD9)jQ.aLG/>L:nft7D(0eCtGbaD^OQ.qf)nC:@HN\+=&)ulr!gGD*qN=Tc0+\fFCUYq)Ua#&PBhFtSg9tQ=,pBo-qg4YBlgDY\c[P!<j28&<%U81Ls34f)/#kh9UHVlCUgm9IJW.]K,BCeQC;64NZXbPK%HVpM4F;<X%>h5%ss,keF/:XRnn4:X>5lHo5a^3/+Z?LY-XJaf*@!K&+?d4=(*L;48Ao"!R#c\;4S^rL29_96@Aep)bA0pg9)N\j#H(%Ja"M5rl"I)0G>"<1H/u;djGU&QD).*]9l+E;d5>eY29?rbM7]!B81eR;PjBg(4O?_42VAO4:e!;aQ1i@2eV>AZ]%097h74Fi,mRW%=O?2Q.>[GmfmPo6gBRuV+i.q,;`efL_'Eq3%eK%1TOZrLMLW0dM8EZn3g\!1>mpJ4HUN.rO)Hf=)VW-bc<bIB6H;b_>8U#-l]%t,f21+G'/7A[.=kO-OPR7=V3%m*nbO8I^nr^+$jggQF.e[X[YC5GKdW7SOFJLi:@4R/HUtK[>=I]tlkt8PHBpgj"ND"a8'@rX<ReK!Rk'8c!in))NSTDD]JG1B"YdBkrMUF>W]XC>77-Ge/T1!\T$Muh]U",Y_AZ%%0>*)^k4;i(Er5$A7\8Qm-5NV)WD`'+M#t3EJQUr?QZ9l%\/Nju+Z%`4_CsD(NQjfVD>frahLMDhhN`*=a#5D#pjjkatLF4;!;+3k?M.)T0ULF>0C!:,K'W0?Dja"O<9^j300m-R;1%+PLnd+n<p;i)dMc<9X22[BH]F\RJ*ZS>LkC.m"7//97`0TemoX(JaR=4CA[f[#0b3!JVlQ*Mj/mD4BQM-V.)l5;a(0k`RrXhJ>6N?L#e2tC]f^tI2&WD-*7_<s&A,YrA3\1Y1V[hEXPO'B!<[S10*jZ>)(@RF/P4\N5H?FW8%FD0DPR%PTrO4,r22mIg9N8PLhddA-#h$a5p"f<W1a5JsKfGg@]&"Cad%Qhj(ZN(3)qbB,7%YdI(=-5W0B?i:jNtJ"P+7'm6\SDY>p+jJ?V@i'LBl#*d/E&Pf55Kl"M94D_ssDoka:S9km[=I]'Eb>:;-\j4J+,'Q+6-Ej6lccgnd,fQ5seCaD'f<h"U+3mDnS]FUc[^f"6:ZcJCGW-G_ZhhV;o([0M\.X#Y>afXC'5ZNAP^YiUFXY/3V(DX13q%au'0]$rk5Gu#nmJMuWO("6t#pug+Q1`kNHVaKYYi4;.@p)ZEjG8k.L@ABkuR,k^E25cH"!Oh[I'TP</(a76gaW6^9E>8g$P/,%6LE#VT7%)dc-Io)^btG(FFQsOMQ:Qpj&ms04T02tc4'RJdPr>D\K`A2g6k*8@4hBdWpD5;'RMbn!#<Va1gTM7Jm/Jg2Dlj~>endstream
+endobj
 xref
-0 6
+0 15
 0000000000 65535 f 
-0000000010 00000 n 
-0000000062 00000 n 
-0000000119 00000 n 
-0000000207 00000 n 
-0000000300 00000 n 
-trailer<< /Size 6 /Root 1 0 R >>
+0000000061 00000 n 
+0000000122 00000 n 
+0000000229 00000 n 
+0000000341 00000 n 
+0000000518 00000 n 
+0000000724 00000 n 
+0000000904 00000 n 
+0000001023 00000 n 
+0000001138 00000 n 
+0000001327 00000 n 
+0000001559 00000 n 
+0000001629 00000 n 
+0000001928 00000 n 
+0000001989 00000 n 
+trailer
+<<
+/ID 
+[<a168542c47673aa521c75f56a8b40485><a168542c47673aa521c75f56a8b40485>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 12 0 R
+/Root 11 0 R
+/Size 15
+>>
 startxref
-0
+4696
 %%EOF

@@ -62,9 +62,7 @@ O portfólio está publicado e continua em evolução.
 
 Próximas etapas planejadas:
 
-- Substituir o currículo provisório por uma versão completa
 - Aprimorar metadados para compartilhamento e SEO
-- Sincronizar o idioma selecionado com os atributos da página
 - Adicionar novos projetos conforme forem concluídos
 
 ## Autor
