@@ -1,11 +1,11 @@
 import styles from "./Button.module.css";
 
-function Button({ children, href, target = "_self", variant = "primary" }) {
-  const className = `${styles.button} ${styles[variant] ?? styles.primary}`;
+function Button({ children, href, target = "_self", variant = "primary", className = "" }) {
+  const classes = `${styles.button} ${styles[variant] ?? styles.primary} ${className}`.trim();
 
   return (
     <a
-      className={className}
+      className={classes}
       href={href}
       target={target}
       rel={target === "_blank" ? "noopener noreferrer" : undefined}

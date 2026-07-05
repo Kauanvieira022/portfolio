@@ -33,14 +33,20 @@ function Contact({ t }) {
           </div>
 
           <div className={styles.actions}>
-            <Button href={`mailto:${profile.email}`}>
+            <Button href={`mailto:${profile.email}`} className={styles.actionButton}>
               <span className={styles.buttonContent}>
                 {icons.email}
                 <span>{t.contact.button}</span>
               </span>
             </Button>
             {social.slice(0, 2).map((item) => (
-              <Button key={item.label} href={item.href} target="_blank" variant="secondary">
+              <Button
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                variant="secondary"
+                className={styles.actionButton}
+              >
                 <span className={styles.buttonContent}>
                   {icons[item.id]}
                   <span>{item.label}</span>
