@@ -27,7 +27,7 @@ function Contact({ t }) {
       <Container>
         <div className={styles.wrapper}>
           <div>
-            <span>{t.contact.title}</span>
+            <span className={styles.eyebrow}>{t.contact.title}</span>
             <h2>{t.contact.heading}</h2>
             <p>{t.contact.paragraph}</p>
           </div>
