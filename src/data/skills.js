@@ -10,7 +10,16 @@ const skills = {
     },
     {
       category: "Data & BI",
-      items: ["Power BI", "Data cleaning", "Data analysis", "Dashboards", "Spreadsheets"],
+      items: [
+        "SQL",
+        "SQLite",
+        "SQL Server",
+        "Power BI",
+        "Data analysis",
+        "Data cleaning",
+        "Dashboards",
+        "Relational modeling",
+      ],
     },
     {
       category: "Systems & processes",
@@ -27,16 +36,25 @@ const skills = {
       items: ["React", "JavaScript", "HTML", "CSS", "CSS Modules", "UI responsiva"],
     },
     {
-      category: "Backend e automação",
-      items: ["Node.js", "Python", "APIs REST", "Integrações", "Automação"],
+      category: "Backend e automacao",
+      items: ["Node.js", "Python", "APIs REST", "Integracoes", "Automacao"],
     },
     {
       category: "Dados e BI",
-      items: ["Power BI", "Limpeza de dados", "Análise de dados", "Dashboards", "Planilhas"],
+      items: [
+        "SQL",
+        "SQLite",
+        "SQL Server",
+        "Power BI",
+        "Analise de dados",
+        "Limpeza de dados",
+        "Dashboards",
+        "Modelagem relacional",
+      ],
     },
     {
       category: "Sistemas e processos",
-      items: ["ERP Oracle", "Qualitor", "Mapeamento de processos", "Testes", "Documentação"],
+      items: ["ERP Oracle", "Qualitor", "Mapeamento de processos", "Testes", "Documentacao"],
     },
     {
       category: "Entrega",
