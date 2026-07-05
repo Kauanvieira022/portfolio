@@ -56,15 +56,16 @@ const translations = {
       title: "Professional experience",
     },
     projects: {
-      title: "A project you can inspect",
+      title: "Selected projects",
       intro:
-        "Until new cases are ready, this portfolio is the clearest public example of how I structure interfaces, content and frontend code.",
+        "Projects where I apply software, data and business rules to practical problems, with public code available for review.",
       challengeLabel: "Challenge",
       solutionLabel: "Approach",
       highlightsLabel: "What is already working",
       liveLink: "View project",
       sourceLink: "Source code",
-      evidenceNote: "New projects will be added here as they are completed.",
+      moreTitle: "More projects",
+      repositoryLink: "View repository",
     },
     contact: {
       title: "Contact",
@@ -131,15 +132,16 @@ const translations = {
       title: "Experiência profissional",
     },
     projects: {
-      title: "Um projeto que você pode verificar",
+      title: "Projetos selecionados",
       intro:
-        "Enquanto novos cases não estão prontos, este portfólio é o exemplo público mais claro de como organizo interfaces, conteúdo e código frontend.",
+        "Projetos em que aplico software, dados e regras de negócio a problemas práticos, com código público disponível para análise.",
       challengeLabel: "Desafio",
       solutionLabel: "Abordagem",
       highlightsLabel: "O que já está funcionando",
       liveLink: "Ver projeto",
       sourceLink: "Código-fonte",
-      evidenceNote: "Novos projetos serão adicionados aqui conforme forem concluídos.",
+      moreTitle: "Outros projetos",
+      repositoryLink: "Ver repositório",
     },
     contact: {
       title: "Contato",

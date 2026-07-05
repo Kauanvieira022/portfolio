@@ -104,7 +104,14 @@ function Navbar({ language, setLanguage, t }) {
                 <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                   LinkedIn
                 </a>
-                <a href="/resume.pdf">{t.nav.resume}</a>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleNavClick}
+                >
+                  {t.nav.resume}
+                </a>
               </div>
             </li>
           </ul>
@@ -117,7 +124,12 @@ function Navbar({ language, setLanguage, t }) {
             <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a className={styles.resume} href="/resume.pdf">
+            <a
+              className={styles.resume}
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t.nav.resume}
             </a>
           </div>

@@ -4,14 +4,18 @@ Portfólio pessoal desenvolvido para apresentar minha trajetória profissional, 
 
 O projeto também funciona como um estudo prático de produto: conteúdo bilíngue, componentes reutilizáveis, interface responsiva e publicação contínua na Vercel.
 
+[Acessar portfólio publicado](https://portfolio-six-black-66.vercel.app/)
+
 ## Visão geral
 
 - Apresentação profissional e formação em Sistemas de Informação na FESPPR
 - Experiências em tecnologia, dados, automação e operações financeiras
 - Stack organizada por frontend, backend, dados e ferramentas
+- Projetos reais com código-fonte público
 - Conteúdo disponível em português e inglês
 - Navegação responsiva para desktop e dispositivos móveis
 - Deploy automático a partir da branch `main`
+- Metadados Open Graph, sitemap e regras de indexação
 
 ## Tecnologias
 
@@ -62,7 +66,6 @@ O portfólio está publicado e continua em evolução.
 
 Próximas etapas planejadas:
 
-- Aprimorar metadados para compartilhamento e SEO
 - Adicionar novos projetos conforme forem concluídos
 
 ## Autor

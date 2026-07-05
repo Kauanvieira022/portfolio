@@ -8,7 +8,8 @@ import projects from "../../../data/projects";
 import styles from "./Projects.module.css";
 
 function Projects({ language, t }) {
-  const project = projects[language] ?? projects.en;
+  const collection = projects[language] ?? projects.en;
+  const project = collection.featured;
 
   return (
     <motion.section
@@ -16,7 +17,7 @@ function Projects({ language, t }) {
       className={styles.projects}
       initial={{ opacity: 0, translateY: 20 }}
       whileInView={{ opacity: 1, translateY: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <Container>
@@ -62,7 +63,7 @@ function Projects({ language, t }) {
             </div>
 
             <div className={styles.links}>
-              <a href={project.links.live}>
+              <a href={project.links.live} target="_blank" rel="noopener noreferrer">
                 {t.projects.liveLink}
                 <FiArrowUpRight aria-hidden="true" />
               </a>
@@ -74,7 +75,40 @@ function Projects({ language, t }) {
           </footer>
         </article>
 
-        <p className={styles.note}>{t.projects.evidenceNote}</p>
+        <h3 className={styles.moreTitle}>{t.projects.moreTitle}</h3>
+
+        <div className={styles.projectGrid}>
+          {collection.items.map((item) => (
+            <article className={styles.projectCard} key={item.title}>
+              <div className={styles.projectMeta}>
+                <span>{item.status}</span>
+                <span>{item.collaboration}</span>
+              </div>
+
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+
+              <ul className={styles.projectHighlights}>
+                {item.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+
+              <div className={styles.projectFooter}>
+                <div className={styles.tags}>
+                  {item.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <a href={item.source} target="_blank" rel="noopener noreferrer">
+                  <FiGithub aria-hidden="true" />
+                  {t.projects.repositoryLink}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
       </Container>
     </motion.section>
   );
