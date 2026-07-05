@@ -87,6 +87,12 @@ function Navbar({ language, setLanguage, t }) {
     setMenuOpen(false);
   };
 
+  const handleExternalMobileClick = () => {
+    window.setTimeout(() => {
+      setMenuOpen(false);
+    }, 0);
+  };
+
   return (
     <header className={styles.header}>
       <Container>
@@ -115,11 +121,21 @@ function Navbar({ language, setLanguage, t }) {
             <li className={styles.mobileActions}>
               <LanguageSwitcher language={language} setLanguage={setLanguage} t={t} />
               <div className={styles.mobileLinks}>
-                <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleExternalMobileClick}
+                >
                   <FaGithub size={18} aria-hidden="true" />
                   <span>GitHub</span>
                 </a>
-                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleExternalMobileClick}
+                >
                   <FaLinkedin size={18} aria-hidden="true" />
                   <span>LinkedIn</span>
                 </a>
@@ -127,7 +143,7 @@ function Navbar({ language, setLanguage, t }) {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleNavClick}
+                  onClick={handleExternalMobileClick}
                 >
                   <HiOutlineDocumentText size={18} aria-hidden="true" />
                   {t.nav.resume}
