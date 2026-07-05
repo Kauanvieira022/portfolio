@@ -3,12 +3,24 @@
 }
 
 .wrapper span {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
     color: var(--color-primary);
     font-family: var(--font-family-mono);
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0;
     text-transform: uppercase;
+}
+
+.wrapper span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    flex: 0 0 6px;
+    background: var(--color-primary);
+    box-shadow: 9px 0 0 rgba(168, 197, 173, 0.38);
 }
 
 .wrapper h2 {

@@ -35,6 +35,12 @@ function Footer({ language }) {
             ))}
           </div>
         </div>
+
+        <div className={styles.outro} aria-hidden="true">
+          {Array.from({ length: 14 }, (_, index) => (
+            <span key={index} />
+          ))}
+        </div>
       </Container>
     </footer>
   );

@@ -10,28 +10,50 @@
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
-  transition: var(--transition);
+  transition:
+    transform 120ms steps(2, end),
+    box-shadow 120ms steps(2, end),
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
   background: var(--color-surface);
 }
 
 .button:hover {
   background: var(--color-surface-hover);
+  transform: translate(-2px, -2px);
+}
+
+.button:active {
+  transform: translate(2px, 2px);
 }
 
 .primary {
   background: var(--color-primary);
   color: #111612;
   border-color: transparent;
+  box-shadow: 4px 4px 0 #617466;
 }
 
 .primary:hover {
   background: #bad3be;
+  box-shadow: 6px 6px 0 #617466;
+}
+
+.primary:active {
+  box-shadow: 1px 1px 0 #617466;
 }
 
 .secondary {
   background: var(--color-surface);
+  box-shadow: 4px 4px 0 var(--color-border);
 }
 
 .secondary:hover {
   background: var(--color-surface-hover);
+  box-shadow: 6px 6px 0 var(--color-border);
+}
+
+.secondary:active {
+  box-shadow: 1px 1px 0 var(--color-border);
 }

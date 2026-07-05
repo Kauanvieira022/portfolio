@@ -1,0 +1,50 @@
+.cursor,
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2100;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.cursor {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border: 1px solid rgba(168, 197, 173, 0.7);
+  transition:
+    width 120ms steps(2, end),
+    height 120ms steps(2, end),
+    margin 120ms steps(2, end),
+    opacity 120ms ease,
+    background 120ms ease;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  background: var(--color-primary);
+  transition: opacity 120ms ease;
+}
+
+.cursor[data-visible="true"],
+.dot[data-visible="true"] {
+  opacity: 1;
+}
+
+.cursor[data-interactive="true"] {
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  background: rgba(168, 197, 173, 0.08);
+}
+
+@media (pointer: coarse), (max-width: 900px) {
+  .cursor,
+  .dot {
+    display: none;
+  }
+}

@@ -32,6 +32,11 @@ const translations = {
       technologiesLabel: "Main technologies",
       ctaProjects: "View Projects",
       ctaContact: "Contact Me",
+      stats: {
+        projects: "public projects",
+        scope: "development scope",
+        graduation: "expected graduation",
+      },
     },
     about: {
       title: "What I do and how I work",
@@ -108,6 +113,11 @@ const translations = {
       technologiesLabel: "Principais tecnologias",
       ctaProjects: "Ver Projetos",
       ctaContact: "Fale Comigo",
+      stats: {
+        projects: "projetos publicos",
+        scope: "atuacao em desenvolvimento",
+        graduation: "conclusao prevista",
+      },
     },
     about: {
       title: "O que faço e como trabalho",

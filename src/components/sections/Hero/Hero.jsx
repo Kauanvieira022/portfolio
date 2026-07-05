@@ -42,6 +42,21 @@ function Hero({ t }) {
               </Button>
             </div>
 
+            <div className={styles.stats} aria-label={t.hero.technologiesLabel}>
+              <div>
+                <strong>03</strong>
+                <span>{t.hero.stats.projects}</span>
+              </div>
+              <div>
+                <strong>FULL</strong>
+                <span>{t.hero.stats.scope}</span>
+              </div>
+              <div>
+                <strong>2029</strong>
+                <span>{t.hero.stats.graduation}</span>
+              </div>
+            </div>
+
             <div className={styles.techStack} aria-label={t.hero.technologiesLabel}>
               {technologies.map((tech) => (
                 <span key={tech} className={styles.tech}>
@@ -51,16 +66,18 @@ function Hero({ t }) {
             </div>
           </div>
 
-          <div className={styles.image}>
-            <img
-              className={styles.photo}
-              src={profilePhoto}
-              alt="Kauan Machado Vieira"
-              width="640"
-              height="640"
-              decoding="async"
-              fetchPriority="high"
-            />
+          <div className={styles.visual}>
+            <div className={styles.image}>
+              <img
+                className={styles.photo}
+                src={profilePhoto}
+                alt="Kauan Machado Vieira"
+                width="640"
+                height="640"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </div>
           </div>
         </div>
       </Container>

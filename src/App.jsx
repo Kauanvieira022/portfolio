@@ -8,7 +8,13 @@ import Skills from "./components/sections/skills";
 import Experience from "./components/sections/experience";
 import Projects from "./components/sections/projects";
 import Contact from "./components/sections/contact";
+import PixelBackground from "./components/ui/PixelBackground/PixelBackground";
+import PixelCursor from "./components/ui/PixelCursor/PixelCursor";
+import PixelNavigationTransition from "./components/ui/PixelNavigationTransition/PixelNavigationTransition";
+import PixelProgress from "./components/ui/PixelProgress/PixelProgress";
+import PixelTransition from "./components/ui/PixelTransition/PixelTransition";
 import translations from "./data/translations";
+import styles from "./App.module.css";
 
 function App() {
   const [language, setLanguage] = useState(() => {
@@ -27,20 +33,32 @@ function App() {
   const t = useMemo(() => translations[language], [language]);
 
   return (
-    <>
+    <div className={styles.app}>
+      <PixelBackground className={styles.pixelBackground} />
+      <PixelCursor />
+      <PixelNavigationTransition />
+      <PixelProgress t={t} />
+
       <Navbar language={language} setLanguage={setLanguage} t={t} />
 
-      <main>
+      <main className={styles.main}>
         <Hero language={language} t={t} />
+        <PixelTransition />
         <About language={language} t={t} />
+        <PixelTransition />
         <Skills language={language} t={t} />
+        <PixelTransition />
         <Experience language={language} t={t} />
+        <PixelTransition />
         <Projects language={language} t={t} />
+        <PixelTransition />
         <Contact language={language} t={t} />
       </main>
 
-      <Footer language={language} t={t} />
-    </>
+      <div className={styles.footerLayer}>
+        <Footer language={language} t={t} />
+      </div>
+    </div>
   );
 }
 

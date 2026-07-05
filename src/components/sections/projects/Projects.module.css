@@ -1,6 +1,7 @@
 .projects {
   padding: calc(var(--space-6) - 0.25rem) 0;
-  background: var(--color-surface);
+  background: rgba(23, 26, 24, 0.68);
+  backdrop-filter: blur(5px);
 }
 
 .intro {
@@ -14,7 +15,11 @@
 .caseStudy {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-background);
+  background: rgba(16, 18, 16, 0.76);
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .caseHeader {
@@ -148,7 +153,13 @@
   padding: 1.6rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-background);
+  background: rgba(16, 18, 16, 0.74);
+  backdrop-filter: blur(8px);
+  transition:
+    transform 150ms steps(2, end),
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .projectMeta {
@@ -207,6 +218,20 @@
 
 .projectFooter > a:hover {
   color: var(--color-primary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .caseStudy:hover {
+    border-color: rgba(168, 197, 173, 0.52);
+    box-shadow: 6px 6px 0 rgba(97, 116, 102, 0.18);
+  }
+
+  .projectCard:hover {
+    transform: translate(-3px, -3px);
+    border-color: rgba(168, 197, 173, 0.58);
+    background: rgba(16, 18, 16, 0.84);
+    box-shadow: 6px 6px 0 rgba(97, 116, 102, 0.26);
+  }
 }
 
 @media (max-width: 900px) {
