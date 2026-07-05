@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FiMail } from "react-icons/fi";
 import Container from "../../ui/Container";
 import Button from "../../ui/Button";
 import profile from "../../../data/profile";
@@ -7,6 +9,12 @@ import social from "../../../data/social";
 import styles from "./Contact.module.css";
 
 function Contact({ t }) {
+  const icons = {
+    github: <FaGithub size={18} aria-hidden="true" />,
+    linkedin: <FaLinkedin size={18} aria-hidden="true" />,
+    email: <FiMail size={18} aria-hidden="true" />,
+  };
+
   return (
     <motion.section
       id="contact"
@@ -25,10 +33,18 @@ function Contact({ t }) {
           </div>
 
           <div className={styles.actions}>
-            <Button href={`mailto:${profile.email}`}>{t.contact.button}</Button>
+            <Button href={`mailto:${profile.email}`}>
+              <span className={styles.buttonContent}>
+                {icons.email}
+                <span>{t.contact.button}</span>
+              </span>
+            </Button>
             {social.slice(0, 2).map((item) => (
               <Button key={item.label} href={item.href} target="_blank" variant="secondary">
-                {item.label}
+                <span className={styles.buttonContent}>
+                  {icons[item.id]}
+                  <span>{item.label}</span>
+                </span>
               </Button>
             ))}
           </div>

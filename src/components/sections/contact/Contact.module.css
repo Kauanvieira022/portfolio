@@ -42,6 +42,12 @@
   align-items: center;
 }
 
+.buttonContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 @media (max-width: 900px) {
   .wrapper {
     align-items: flex-start;

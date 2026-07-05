@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { FiMenu, FiX } from "react-icons/fi";
+import { HiOutlineDocumentText } from "react-icons/hi2";
 
 import Container from "../../ui/Container";
 import navigation from "../../../data/navigation";
@@ -31,6 +33,21 @@ function LanguageSwitcher({ language, setLanguage, t }) {
         EN
       </button>
     </div>
+  );
+}
+
+function SocialIconLink({ href, label, children, className = "" }) {
+  return (
+    <a
+      className={`${styles.iconLink} ${className}`.trim()}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      title={label}
+    >
+      {children}
+    </a>
   );
 }
 
@@ -99,10 +116,12 @@ function Navbar({ language, setLanguage, t }) {
               <LanguageSwitcher language={language} setLanguage={setLanguage} t={t} />
               <div className={styles.mobileLinks}>
                 <a href={profile.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
+                  <FaGithub size={18} aria-hidden="true" />
+                  <span>GitHub</span>
                 </a>
                 <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
+                  <FaLinkedin size={18} aria-hidden="true" />
+                  <span>LinkedIn</span>
                 </a>
                 <a
                   href="/resume.pdf"
@@ -110,6 +129,7 @@ function Navbar({ language, setLanguage, t }) {
                   rel="noopener noreferrer"
                   onClick={handleNavClick}
                 >
+                  <HiOutlineDocumentText size={18} aria-hidden="true" />
                   {t.nav.resume}
                 </a>
               </div>
@@ -118,20 +138,15 @@ function Navbar({ language, setLanguage, t }) {
 
           <div className={styles.actions}>
             <LanguageSwitcher language={language} setLanguage={setLanguage} t={t} />
-            <a href={profile.github} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a
-              className={styles.resume}
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.nav.resume}
-            </a>
+            <SocialIconLink href={profile.github} label="GitHub">
+              <FaGithub size={18} aria-hidden="true" />
+            </SocialIconLink>
+            <SocialIconLink href={profile.linkedin} label="LinkedIn">
+              <FaLinkedin size={18} aria-hidden="true" />
+            </SocialIconLink>
+            <SocialIconLink href="/resume.pdf" label={t.nav.resume} className={styles.resume}>
+              <HiOutlineDocumentText size={18} aria-hidden="true" />
+            </SocialIconLink>
           </div>
 
           <button
