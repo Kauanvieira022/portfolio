@@ -18,6 +18,35 @@
   gap: 1.35rem;
 }
 
+.systemLine {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.42rem 0.7rem;
+  border: 1px solid rgba(168, 197, 173, 0.24);
+  background: rgba(16, 18, 16, 0.58);
+  color: var(--color-primary);
+  font-family: var(--font-family-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.systemLine::before {
+  content: "";
+  flex: 0 0 1.32rem;
+  width: 1.32rem;
+  height: 0.48rem;
+  background:
+    linear-gradient(
+      90deg,
+      var(--color-primary) 0 0.48rem,
+      transparent 0.48rem 0.78rem,
+      rgba(209, 173, 104, 0.72) 0.78rem 1.32rem
+    );
+}
+
 .eyebrow {
   display: flex;
   flex-wrap: wrap;
@@ -83,6 +112,19 @@
   border-bottom: 1px solid var(--color-border);
   background: rgba(16, 18, 16, 0.46);
   backdrop-filter: blur(6px);
+  position: relative;
+}
+
+.stats::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    rgba(209, 173, 104, 0.72)
+  );
 }
 
 .stats div {
@@ -121,6 +163,7 @@
   padding: 0.45rem 0.7rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  background: rgba(16, 18, 16, 0.42);
   color: var(--color-text-secondary);
   font-family: var(--font-family-mono);
   font-size: 0.9rem;
@@ -132,6 +175,26 @@
   width: 100%;
   isolation: isolate;
   overflow: hidden;
+}
+
+.visualTag {
+  position: absolute;
+  top: 14%;
+  right: 0;
+  z-index: 2;
+  width: max-content;
+  max-width: min(390px, 94%);
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(168, 197, 173, 0.25);
+  background: rgba(16, 18, 16, 0.64);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+  white-space: nowrap;
 }
 
 .visual::before,
@@ -163,9 +226,14 @@
   bottom: 8%;
   z-index: 1;
   width: min(240px, 56%);
-  padding: 0.4rem;
+  padding: 0.46rem;
   border: 1px solid var(--color-border);
-  background: var(--color-background);
+  background:
+    linear-gradient(rgba(168, 197, 173, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 197, 173, 0.08) 1px, transparent 1px),
+    var(--color-background);
+  background-size: 18px 18px;
+  box-shadow: 8px 8px 0 rgba(97, 116, 102, 0.16);
 }
 
 .image::before,
@@ -200,6 +268,20 @@
   filter: saturate(0.88) contrast(1.03);
 }
 
+.imageStatus {
+  position: absolute;
+  right: -1px;
+  bottom: -2.25rem;
+  padding: 0.48rem 0.65rem;
+  border: 1px solid var(--color-border);
+  background: rgba(16, 18, 16, 0.88);
+  color: var(--color-primary);
+  font-family: var(--font-family-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
@@ -215,6 +297,11 @@
   .content {
     align-items: center;
     gap: 1rem;
+  }
+
+  .systemLine {
+    font-size: 0.68rem;
+    max-width: 100%;
   }
 
   .badge {
@@ -253,11 +340,13 @@
   }
 
   .stats div {
+    min-width: 0;
     padding: 0.75rem 0.45rem;
   }
 
   .stats span {
     font-size: 0.62rem;
+    overflow-wrap: anywhere;
   }
 
   .tech {
@@ -271,20 +360,77 @@
     margin-inline: auto;
   }
 
+  .visualTag {
+    top: 8%;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 0.62rem;
+    width: auto;
+    max-width: 92%;
+    white-space: normal;
+    text-align: left;
+  }
+
   .image {
-    right: 8%;
+    right: 50%;
+    transform: translateX(50%);
     width: min(180px, 46%);
+  }
+
+  .imageStatus {
+    bottom: -2rem;
+    font-size: 0.58rem;
   }
 }
 
 @media (max-width: 480px) {
+  .systemLine {
+    align-self: stretch;
+    justify-content: center;
+    padding-inline: 0.55rem;
+    font-size: 0.58rem;
+  }
+
+  .systemLine::before {
+    flex-basis: 1rem;
+    width: 1rem;
+    height: 0.42rem;
+    background:
+      linear-gradient(
+        90deg,
+        var(--color-primary) 0 0.42rem,
+        transparent 0.42rem 0.62rem,
+        rgba(209, 173, 104, 0.72) 0.62rem 1rem
+      );
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stats div {
+    padding: 0.7rem 0.85rem;
+  }
+
+  .stats div + div {
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+
   .visual {
-    min-height: 315px;
+    min-height: 340px;
   }
 
   .image {
-    right: 3%;
-    width: min(150px, 44%);
+    right: 50%;
+    bottom: 12%;
+    transform: translateX(50%);
+    width: min(155px, 46%);
+  }
+
+  .visualTag {
+    right: 50%;
+    max-width: 210px;
   }
 }
 

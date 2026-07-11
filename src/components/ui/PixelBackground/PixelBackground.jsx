@@ -16,12 +16,12 @@ const PARTICLE_COLORS = [
 ];
 
 const SCENES = [
-  { x: 0.76, y: 0.36, mobileY: 0.7, scale: 0.72, alpha: 0.46, trackAlpha: 0.8 },
-  { x: 0.18, y: 0.64, mobileY: 0.24, scale: 0.46, alpha: 0.28, trackAlpha: 0.3 },
-  { x: 0.82, y: 0.34, mobileY: 0.76, scale: 0.55, alpha: 0.32, trackAlpha: 0.52 },
-  { x: 0.16, y: 0.38, mobileY: 0.22, scale: 0.42, alpha: 0.24, trackAlpha: 0.24 },
-  { x: 0.82, y: 0.62, mobileY: 0.78, scale: 0.6, alpha: 0.36, trackAlpha: 0.64 },
-  { x: 0.5, y: 0.44, mobileY: 0.34, scale: 0.44, alpha: 0.28, trackAlpha: 0.36 },
+  { trackAlpha: 0.82 },
+  { trackAlpha: 0.36 },
+  { trackAlpha: 0.58 },
+  { trackAlpha: 0.3 },
+  { trackAlpha: 0.66 },
+  { trackAlpha: 0.4 },
 ];
 
 function createRandom(seed = 2401) {
@@ -44,40 +44,6 @@ function createPixel(Graphics, size, color, filled) {
   return pixel;
 }
 
-function createCore(Container, Graphics) {
-  const core = new Container();
-  const rings = [
-    { size: 190, color: COLORS.sage, direction: 1 },
-    { size: 138, color: COLORS.teal, direction: -1 },
-    { size: 86, color: COLORS.paper, direction: 1 },
-  ];
-
-  rings.forEach((ring, index) => {
-    const graphic = new Graphics()
-      .rect(-ring.size / 2, -ring.size / 2, ring.size, ring.size)
-      .stroke({
-        color: ring.color,
-        width: index === 0 ? 2 : 1,
-        alpha: 0.5 - index * 0.08,
-      });
-
-    graphic.rotation = index * 0.22;
-    graphic.label = `pixel-core-${index}`;
-    core.addChild(graphic);
-  });
-
-  const center = new Graphics()
-    .rect(-18, -18, 36, 36)
-    .fill({ color: COLORS.sage, alpha: 0.16 })
-    .stroke({ color: COLORS.paper, width: 2, alpha: 0.62 });
-
-  center.rotation = Math.PI / 4;
-  center.label = "pixel-core-center";
-  core.addChild(center);
-
-  return core;
-}
-
 function PixelBackground({ className = "" }) {
   const hostRef = useRef(null);
 
@@ -96,21 +62,8 @@ function PixelBackground({ className = "" }) {
     let disposed = false;
     let resizeObserver;
     let elapsed = 0;
-    let coreScale = 1;
-    let coreBaseX = 0;
-    let coreBaseY = 0;
-    let coreTargetX = 0;
-    let coreTargetY = 0;
-    let coreRenderedScale = 1;
-    let coreTargetScale = 1;
-    let coreRenderedAlpha = 0.4;
-    let coreTargetAlpha = 0.4;
     let trackTargetAlpha = 1;
     let activeScene = 0;
-    let pointerX = 0;
-    let pointerY = 0;
-    let pointerTargetX = 0;
-    let pointerTargetY = 0;
     let scrollTarget = window.scrollY;
     let scrollPosition = scrollTarget;
 
@@ -146,7 +99,33 @@ function PixelBackground({ className = "" }) {
       const horizon = new Graphics();
       const track = new Graphics();
       const particlesLayer = new Container();
-      const core = createCore(Container, Graphics);
+      const codeLayer = new Container();
+      const codeBits = Array.from({ length: 18 }, (_, index) => {
+        const bit = new Graphics();
+        const width = 18 + Math.floor(random() * 34);
+        const height = 4 + Math.floor(random() * 8);
+
+        bit
+          .rect(0, 0, width, height)
+          .fill({
+            color: index % 3 === 0 ? COLORS.amber : COLORS.sage,
+            alpha: 0.16,
+          })
+          .rect(width + 8, 0, 8, height)
+          .fill({ color: COLORS.paper, alpha: 0.12 });
+
+        bit.x = random() * window.innerWidth;
+        bit.y = random() * window.innerHeight;
+        bit.alpha = 0.25 + random() * 0.2;
+        codeLayer.addChild(bit);
+
+        return {
+          graphic: bit,
+          speed: 22 + random() * 34,
+          yRatio: random(),
+          phase: random() * Math.PI * 2,
+        };
+      });
       const particles = Array.from({ length: 34 }, (_, index) => {
         const size = 4 + Math.floor(random() * 14);
         const color = PARTICLE_COLORS[index % PARTICLE_COLORS.length];
@@ -171,25 +150,14 @@ function PixelBackground({ className = "" }) {
         return data;
       });
 
-      app.stage.addChild(grid, horizon, particlesLayer, track, core);
+      app.stage.addChild(grid, horizon, codeLayer, particlesLayer, track);
 
       const updateScene = (jumpToTarget = false) => {
-        const width = app.screen.width;
-        const height = app.screen.height;
-        const mobile = width < 700;
         const scene = SCENES[activeScene] ?? SCENES[0];
 
-        coreTargetX = width * (mobile ? 0.5 : scene.x);
-        coreTargetY = height * (mobile ? scene.mobileY : scene.y);
-        coreTargetScale = coreScale * scene.scale;
-        coreTargetAlpha = scene.alpha;
         trackTargetAlpha = scene.trackAlpha;
 
-        if (jumpToTarget || coreBaseX === 0) {
-          coreBaseX = coreTargetX;
-          coreBaseY = coreTargetY;
-          coreRenderedScale = coreTargetScale;
-          coreRenderedAlpha = coreTargetAlpha;
+        if (jumpToTarget) {
           track.alpha = trackTargetAlpha;
         }
       };
@@ -237,6 +205,11 @@ function PixelBackground({ className = "" }) {
             ])
             .fill({ color: COLORS.amber, alpha: 0.08 })
             .stroke({ color: COLORS.amber, width: 1, alpha: 0.3 });
+
+          track
+            .rect(x + 136, trackY - 46, 42, 10)
+            .fill({ color: COLORS.teal, alpha: 0.08 })
+            .stroke({ color: COLORS.teal, width: 1, alpha: 0.24 });
         }
 
         particles.forEach((particle) => {
@@ -244,18 +217,7 @@ function PixelBackground({ className = "" }) {
           particle.graphic.y = particle.yRatio * height;
         });
 
-        const mobile = width < 700;
-        coreScale = mobile
-          ? Math.max(0.58, Math.min(0.78, width / 520))
-          : Math.max(0.9, Math.min(1.35, width / 1180));
-        updateScene(coreBaseX === 0);
-        core.position.set(coreBaseX, coreBaseY);
-        core.scale.set(coreRenderedScale);
-      };
-
-      const onPointerMove = (event) => {
-        pointerTargetX = (event.clientX / window.innerWidth - 0.5) * 22;
-        pointerTargetY = (event.clientY / window.innerHeight - 0.5) * 16;
+        updateScene(true);
       };
 
       const onScroll = () => {
@@ -276,7 +238,6 @@ function PixelBackground({ className = "" }) {
 
       resizeObserver = new ResizeObserver(layout);
       resizeObserver.observe(host);
-      window.addEventListener("pointermove", onPointerMove, { passive: true });
       window.addEventListener("scroll", onScroll, { passive: true });
 
       app.ticker.maxFPS = reducedMotion.matches ? 24 : 48;
@@ -288,15 +249,7 @@ function PixelBackground({ className = "" }) {
         const cell = width < 700 ? 40 : 56;
 
         elapsed += deltaSeconds * motionFactor;
-        pointerX += (pointerTargetX - pointerX) * 0.04;
-        pointerY += (pointerTargetY - pointerY) * 0.04;
         scrollPosition += (scrollTarget - scrollPosition) * 0.035;
-        coreBaseX += (coreTargetX - coreBaseX) * 0.028;
-        coreBaseY += (coreTargetY - coreBaseY) * 0.028;
-        coreRenderedScale +=
-          (coreTargetScale - coreRenderedScale) * 0.032;
-        coreRenderedAlpha +=
-          (coreTargetAlpha - coreRenderedAlpha) * 0.032;
         track.alpha += (trackTargetAlpha - track.alpha) * 0.04;
 
         grid.x = -(elapsed * 18) % cell;
@@ -309,15 +262,16 @@ function PixelBackground({ className = "" }) {
           10,
         );
 
-        core.x = coreBaseX + pointerX;
-        core.y = coreBaseY + pointerY - (scrollPosition % 120) * 0.03;
-        core.rotation = elapsed * (0.08 + activeScene * 0.012);
-        core.alpha = coreRenderedAlpha + beat * 0.08;
-        core.scale.set(coreRenderedScale * (1 + beat * 0.035));
+        codeBits.forEach((bit, index) => {
+          const graphic = bit.graphic;
 
-        core.children.forEach((child, index) => {
-          child.rotation +=
-            deltaSeconds * motionFactor * (index % 2 === 0 ? 0.22 : -0.3);
+          graphic.x -= bit.speed * deltaSeconds * motionFactor;
+          graphic.y += Math.sin(elapsed * 1.4 + bit.phase) * 0.09;
+
+          if (graphic.x < -90) {
+            graphic.x = width + 90;
+            graphic.y = bit.yRatio * height + (index % 4) * 12;
+          }
         });
 
         particles.forEach((particle, index) => {
@@ -346,7 +300,6 @@ function PixelBackground({ className = "" }) {
       onScroll();
 
       app.cleanupPixelBackground = () => {
-        window.removeEventListener("pointermove", onPointerMove);
         window.removeEventListener("scroll", onScroll);
       };
     };

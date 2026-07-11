@@ -23,9 +23,12 @@ function Skills({ language, t }) {
         <p className={styles.intro}>{t.skills.intro}</p>
 
         <div className={styles.grid}>
-          {groups.map((group) => (
+          {groups.map((group, index) => (
             <article key={group.category} className={styles.card}>
-              <h3>{group.category}</h3>
+              <div className={styles.cardHeader}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{group.category}</h3>
+              </div>
               <div className={styles.list}>
                 {group.items.map((item) => (
                   <span key={item}>{item}</span>

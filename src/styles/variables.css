@@ -21,8 +21,8 @@
      TYPOGRAPHY
   =========================== */
 
-  --font-family: "IBM Plex Sans", sans-serif;
-  --font-family-mono: "IBM Plex Mono", monospace;
+  --font-family: "Space Grotesk", system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", "Cascadia Code", monospace;
 
   --font-size-xs: .875rem;
   --font-size-sm: 1rem;

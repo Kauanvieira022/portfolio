@@ -25,6 +25,12 @@ function Projects({ language, t }) {
         <p className={styles.intro}>{t.projects.intro}</p>
 
         <article className={styles.caseStudy}>
+          <div className={styles.caseTopbar} aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+
           <header className={styles.caseHeader}>
             <div>
               <span className={styles.status}>{project.status}</span>
@@ -80,6 +86,7 @@ function Projects({ language, t }) {
         <div className={styles.projectGrid}>
           {collection.items.map((item) => (
             <article className={styles.projectCard} key={item.title}>
+              <span className={styles.projectSignal} aria-hidden="true" />
               <div className={styles.projectMeta}>
                 <span>{item.status}</span>
                 <span>{item.collaboration}</span>

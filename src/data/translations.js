@@ -24,6 +24,9 @@ const translations = {
     hero: {
       summary:
         "I build full-stack products that connect interfaces, APIs, automation and data in a practical way.",
+      systemLine: "kauan.dev / full-stack / data",
+      visualTag: "building interfaces + APIs + data",
+      imageStatus: "currently building",
       description:
         "I focus on clean delivery, reliable systems and web experiences that feel clear to use and easy to maintain.",
       education:
@@ -44,9 +47,11 @@ const translations = {
         "I am Kauan Machado Vieira, a Full Stack Developer with a professional background that started in finance and business operations. That experience gave me a practical understanding of processes, corporate systems and user needs that I now apply across frontend, backend, data and automation.",
       highlights: {
         stack: "Core stack",
-        stackText: "React, Node.js, Python, REST APIs, Power BI and automation workflows.",
+        stackText:
+          "React, Node.js, Python, REST APIs, Power BI and automation workflows.",
         academic: "Academic path",
-        academicText: "Information Systems student at FESPPR, expected graduation in December 2029.",
+        academicText:
+          "Information Systems student at FESPPR, expected graduation in December 2029.",
         approach: "Working approach",
         approachText:
           "I prefer simple structures, clear decisions and solutions that solve a real problem instead of just looking complete.",
@@ -76,7 +81,7 @@ const translations = {
       title: "Contact",
       heading: "Let's build something meaningful",
       paragraph:
-        "I am open to opportunities, collaborations and conversations about web development and software engineering.",
+        "I enjoy connecting with people to exchange ideas, collaborate on projects and talk about web development and software engineering.",
       button: "Send Email",
     },
   },
@@ -105,6 +110,9 @@ const translations = {
     hero: {
       summary:
         "Desenvolvo produtos full stack que conectam interfaces, APIs, automação e dados de forma prática.",
+      systemLine: "kauan.dev / full-stack / dados",
+      visualTag: "construindo interfaces + APIs + dados",
+      imageStatus: "em desenvolvimento",
       description:
         "Tenho foco em entregas limpas, sistemas confiáveis e experiências web claras de usar e fáceis de manter.",
       education:
@@ -114,9 +122,9 @@ const translations = {
       ctaProjects: "Ver Projetos",
       ctaContact: "Fale Comigo",
       stats: {
-        projects: "projetos publicos",
-        scope: "atuacao em desenvolvimento",
-        graduation: "conclusao prevista",
+        projects: "projetos públicos",
+        scope: "atuação em desenvolvimento",
+        graduation: "conclusão prevista",
       },
     },
     about: {
@@ -127,7 +135,8 @@ const translations = {
         stack: "Stack principal",
         stackText: "React, Node.js, Python, APIs REST, Power BI e automações.",
         academic: "Formação acadêmica",
-        academicText: "Sistemas de Informação na FESPPR, com conclusão prevista para dezembro de 2029.",
+        academicText:
+          "Sistemas de Informação na FESPPR, com conclusão prevista para dezembro de 2029.",
         approach: "Abordagem de trabalho",
         approachText:
           "Prefiro estruturas simples, decisões claras e soluções que resolvem problemas reais, em vez de apenas parecerem completas.",
@@ -157,7 +166,7 @@ const translations = {
       title: "Contato",
       heading: "Vamos construir algo com propósito",
       paragraph:
-        "Estou aberto a oportunidades, colaborações e conversas sobre desenvolvimento web e engenharia de software.",
+        "Gosto de me conectar com pessoas para trocar ideias, colaborar em projetos e conversar sobre desenvolvimento web e engenharia de software.",
       button: "Enviar E-mail",
     },
   },

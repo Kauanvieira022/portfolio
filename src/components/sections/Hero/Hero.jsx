@@ -21,6 +21,8 @@ function Hero({ t }) {
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.content}>
+            <span className={styles.systemLine}>{t.hero.systemLine}</span>
+
             <div className={styles.eyebrow}>
               <span className={styles.badge}>{profile.role}</span>
               <span className={styles.location}>{t.hero.location}</span>
@@ -67,6 +69,7 @@ function Hero({ t }) {
           </div>
 
           <div className={styles.visual}>
+            <div className={styles.visualTag}>{t.hero.visualTag}</div>
             <div className={styles.image}>
               <img
                 className={styles.photo}
@@ -77,6 +80,7 @@ function Hero({ t }) {
                 decoding="async"
                 fetchPriority="high"
               />
+              <span className={styles.imageStatus}>{t.hero.imageStatus}</span>
             </div>
           </div>
         </div>

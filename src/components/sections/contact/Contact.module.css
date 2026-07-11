@@ -3,6 +3,7 @@
 }
 
 .wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,6 +11,22 @@
   padding: var(--space-5);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  background: rgba(16, 18, 16, 0.42);
+  backdrop-filter: blur(6px);
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: min(260px, 45%);
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    rgba(209, 173, 104, 0.68)
+  );
 }
 
 .eyebrow {
@@ -76,8 +93,28 @@
 }
 
 @media (max-width: 560px) {
+  .contact {
+    padding: var(--space-4) 0;
+  }
+
+  .wrapper {
+    padding: 1.4rem 1rem;
+  }
+
+  .wrapper h2 {
+    font-size: 1.85rem;
+  }
+
+  .wrapper p {
+    font-size: 0.95rem;
+  }
+
   .actions {
     grid-template-columns: 1fr;
+  }
+
+  .buttonContent {
+    white-space: normal;
   }
 }
 
