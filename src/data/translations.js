@@ -25,7 +25,6 @@ const translations = {
       summary:
         "I build full-stack products that connect interfaces, APIs, automation and data in a practical way.",
       systemLine: "kauan.dev / full-stack / data",
-      visualTag: "building interfaces + APIs + data",
       imageStatus: "currently building",
       description:
         "I focus on clean delivery, reliable systems and web experiences that feel clear to use and easy to maintain.",
@@ -111,7 +110,6 @@ const translations = {
       summary:
         "Desenvolvo produtos full stack que conectam interfaces, APIs, automação e dados de forma prática.",
       systemLine: "kauan.dev / full-stack / dados",
-      visualTag: "construindo interfaces + APIs + dados",
       imageStatus: "em desenvolvimento",
       description:
         "Tenho foco em entregas limpas, sistemas confiáveis e experiências web claras de usar e fáceis de manter.",

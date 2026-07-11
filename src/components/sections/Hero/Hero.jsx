@@ -69,7 +69,6 @@ function Hero({ t }) {
           </div>
 
           <div className={styles.visual}>
-            <div className={styles.visualTag}>{t.hero.visualTag}</div>
             <div className={styles.image}>
               <img
                 className={styles.photo}
