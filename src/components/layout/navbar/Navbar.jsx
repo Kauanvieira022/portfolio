@@ -57,7 +57,6 @@ function Navbar({ language, setLanguage, t }) {
   const firstMenuLinkRef = useRef(null);
 
   const labels = {
-    home: t.nav.home,
     about: t.nav.about,
     skills: t.nav.skills,
     experience: t.nav.experience,
@@ -97,9 +96,14 @@ function Navbar({ language, setLanguage, t }) {
     <header className={styles.header}>
       <Container>
         <nav className={styles.nav} aria-label={t.nav.navigation}>
-          <a className={styles.logo} href="#home" onClick={handleNavClick}>
-            <h2>{profile.name}</h2>
-            <span>{profile.role[language] ?? profile.role.en}</span>
+          <a
+            className={styles.logo}
+            href="#home"
+            onClick={handleNavClick}
+            aria-label={t.nav.brand}
+          >
+            <span className={styles.monogram}>KMV</span>
+            <span className={styles.brandCaption}>{t.nav.brandCaption}</span>
           </a>
 
           <ul

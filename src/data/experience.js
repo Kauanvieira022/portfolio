@@ -1,6 +1,8 @@
 const experience = {
   en: [
     {
+      year: "2026",
+      current: true,
       company: "Grupo Lumicenter Lighting",
       title: "Technology Intern — Data Engineering, AI and Application Development",
       type: "Internship",
@@ -18,6 +20,7 @@ const experience = {
       ],
     },
     {
+      year: "2024",
       company: "GRPCOM | Grupo Paranaense de Comunicação",
       title: "Financial Assistant",
       type: "Full time",
@@ -36,6 +39,7 @@ const experience = {
       ],
     },
     {
+      year: "2023",
       company: "GRPCOM | Grupo Paranaense de Comunicação",
       title: "Apprentice — Finance",
       type: "Part time",
@@ -54,6 +58,8 @@ const experience = {
   ],
   pt: [
     {
+      year: "2026",
+      current: true,
       company: "Grupo Lumicenter Lighting",
       title: "Estágio em Tecnologia — Engenharia de Dados, IA e Desenvolvimento de Aplicações",
       type: "Estágio",
@@ -71,6 +77,7 @@ const experience = {
       ],
     },
     {
+      year: "2024",
       company: "GRPCOM | Grupo Paranaense de Comunicação",
       title: "Auxiliar Financeiro",
       type: "Tempo integral",
@@ -89,6 +96,7 @@ const experience = {
       ],
     },
     {
+      year: "2023",
       company: "GRPCOM | Grupo Paranaense de Comunicação",
       title: "Jovem Aprendiz — Finanças",
       type: "Meio período",

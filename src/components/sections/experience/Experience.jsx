@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { FiChevronDown } from "react-icons/fi";
 import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
 import experience from "../../../data/experience";
@@ -54,9 +55,18 @@ function Experience({ language, t }) {
               className={styles.item}
               variants={reduceMotion ? undefined : itemVariants}
             >
+              <div className={styles.yearLine}>
+                <span>{item.year}</span>
+                <span className={styles.yearRule} aria-hidden="true" />
+                <span className={item.current ? styles.current : styles.period}>
+                  {item.current
+                    ? `${t.experience.nowLabel} · ${item.period}`
+                    : item.period}
+                </span>
+              </div>
+
               <div className={styles.header}>
                 <div>
-                  <span className={styles.period}>{item.period}</span>
                   <h3>{item.title}</h3>
                   <strong>{item.company}</strong>
                 </div>
@@ -69,11 +79,19 @@ function Experience({ language, t }) {
 
               <p>{item.description}</p>
 
-              <ul className={styles.responsibilities}>
-                {item.responsibilities.map((responsibility) => (
-                  <li key={responsibility}>{responsibility}</li>
-                ))}
-              </ul>
+              <details className={styles.details}>
+                <summary>
+                  <span>
+                    {t.experience.responsibilitiesLabel} ({item.responsibilities.length})
+                  </span>
+                  <FiChevronDown aria-hidden="true" />
+                </summary>
+                <ul className={styles.responsibilities}>
+                  {item.responsibilities.map((responsibility) => (
+                    <li key={responsibility}>{responsibility}</li>
+                  ))}
+                </ul>
+              </details>
             </motion.article>
           ))}
         </motion.div>

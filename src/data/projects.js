@@ -1,28 +1,9 @@
 const projects = {
   en: {
-    featured: {
-      title: "Personal Portfolio",
-      status: "In active development",
-      description:
-        "A bilingual portfolio built as a maintainable product, bringing together my professional background, technical profile and selected projects.",
-      challenge:
-        "Present a multidisciplinary profile across software, data and business operations with clear, verifiable evidence.",
-      solution:
-        "A modular React experience with centralized content, responsive layouts, accessible navigation and automated deployment.",
-      highlights: [
-        "Reusable components and scoped CSS Modules",
-        "Portuguese and English content with saved preference",
-        "Responsive and keyboard-accessible navigation",
-        "Automated production deployment through Vercel",
-      ],
-      tags: ["React", "Vite", "CSS Modules", "Framer Motion", "PixiJS"],
-      links: {
-        live: "https://portfolio-six-black-66.vercel.app",
-        source: "https://github.com/Kauanvieira022/portfolio",
-      },
-    },
+    featuredId: "portfolio",
     items: [
       {
+        id: "inventory-control",
         title: "Inventory Control System",
         status: "Desktop application",
         collaboration: "Team project",
@@ -38,6 +19,27 @@ const projects = {
         source: "https://github.com/Kauanvieira022/essencial-by-dani-estoque",
       },
       {
+        id: "portfolio",
+        title: "Personal Portfolio",
+        status: "Portfolio website",
+        description:
+          "A bilingual portfolio built as a maintainable product, bringing together my professional background, technical profile and selected projects.",
+        challenge:
+          "Present a multidisciplinary profile across software, data and business operations with clear, verifiable evidence.",
+        solution:
+          "A modular React experience with centralized content, responsive layouts, accessible navigation and automated deployment.",
+        highlights: [
+          "Reusable components and scoped CSS Modules",
+          "Portuguese and English content with saved preference",
+          "Responsive and keyboard-accessible navigation",
+          "Automated production deployment through Vercel",
+        ],
+        tags: ["React", "Vite", "CSS Modules", "Framer Motion", "PixiJS"],
+        source: "https://github.com/Kauanvieira022/portfolio",
+        live: "https://portfolio-six-black-66.vercel.app/",
+      },
+      {
+        id: "payroll-system",
         title: "Payroll System",
         status: "Academic application",
         collaboration: "Team project",
@@ -55,29 +57,10 @@ const projects = {
     ],
   },
   pt: {
-    featured: {
-      title: "Portfólio Pessoal",
-      status: "Em evolução contínua",
-      description:
-        "Um portfólio bilíngue construído como produto, reunindo minha trajetória profissional, perfil técnico e projetos selecionados.",
-      challenge:
-        "Apresentar um perfil multidisciplinar entre software, dados e operações de negócio com evidências claras e verificáveis.",
-      solution:
-        "Uma experiência modular em React, com conteúdo centralizado, layouts responsivos, navegação acessível e deploy automatizado.",
-      highlights: [
-        "Componentes reutilizáveis e estilos isolados com CSS Modules",
-        "Conteúdo em português e inglês com preferência salva",
-        "Navegação responsiva e acessível por teclado",
-        "Deploy de produção automatizado pela Vercel",
-      ],
-      tags: ["React", "Vite", "CSS Modules", "Framer Motion", "PixiJS"],
-      links: {
-        live: "https://portfolio-six-black-66.vercel.app",
-        source: "https://github.com/Kauanvieira022/portfolio",
-      },
-    },
+    featuredId: "portfolio",
     items: [
       {
+        id: "inventory-control",
         title: "Sistema de Controle de Estoque",
         status: "Aplicação desktop",
         collaboration: "Projeto em equipe",
@@ -93,6 +76,27 @@ const projects = {
         source: "https://github.com/Kauanvieira022/essencial-by-dani-estoque",
       },
       {
+        id: "portfolio",
+        title: "Portfólio Pessoal",
+        status: "Site de portfólio",
+        description:
+          "Um portfólio bilíngue construído como produto, reunindo minha trajetória profissional, perfil técnico e projetos selecionados.",
+        challenge:
+          "Apresentar um perfil multidisciplinar entre software, dados e operações de negócio com evidências claras e verificáveis.",
+        solution:
+          "Uma experiência modular em React, com conteúdo centralizado, layouts responsivos, navegação acessível e deploy automatizado.",
+        highlights: [
+          "Componentes reutilizáveis e estilos isolados com CSS Modules",
+          "Conteúdo em português e inglês com preferência salva",
+          "Navegação responsiva e acessível por teclado",
+          "Deploy de produção automatizado pela Vercel",
+        ],
+        tags: ["React", "Vite", "CSS Modules", "Framer Motion", "PixiJS"],
+        source: "https://github.com/Kauanvieira022/portfolio",
+        live: "https://portfolio-six-black-66.vercel.app/",
+      },
+      {
+        id: "payroll-system",
         title: "Sistema de Folha de Pagamento",
         status: "Aplicação acadêmica",
         collaboration: "Projeto em equipe",

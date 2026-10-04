@@ -1,9 +1,5 @@
 const navigation = [
   {
-    id: "home",
-    label: "Home",
-  },
-  {
     id: "about",
     label: "About",
   },

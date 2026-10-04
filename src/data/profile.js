@@ -2,8 +2,8 @@
   name: "Kauan Machado Vieira",
 
   role: {
-    en: "Full Stack Developer",
-    pt: "Desenvolvedor Full Stack",
+    en: "Full-stack developer",
+    pt: "Desenvolvedor full stack",
   },
 
   email: "kauanvieira022@gmail.com",

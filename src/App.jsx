@@ -11,8 +11,6 @@ import Projects from "./components/sections/projects";
 import Contact from "./components/sections/contact";
 import PixelBackground from "./components/ui/PixelBackground/PixelBackground";
 import PixelCursor from "./components/ui/PixelCursor/PixelCursor";
-import PixelNavigationTransition from "./components/ui/PixelNavigationTransition/PixelNavigationTransition";
-import PixelProgress from "./components/ui/PixelProgress/PixelProgress";
 import PixelTransition from "./components/ui/PixelTransition/PixelTransition";
 import translations from "./data/translations";
 import styles from "./App.module.css";
@@ -46,20 +44,19 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className={styles.app}>
+        <a className={styles.skipLink} href="#main">
+          {t.nav.skipToContent}
+        </a>
         <PixelBackground className={styles.codeBackground} language={language} />
         <PixelCursor />
-        <PixelNavigationTransition />
-        <PixelProgress t={t} />
 
         <Navbar language={language} setLanguage={setLanguage} t={t} />
 
-        <main className={styles.main}>
+        <main id="main" className={styles.main} tabIndex={-1}>
           <Hero language={language} t={t} />
           <PixelTransition />
-          <About language={language} t={t} />
-          <PixelTransition />
+          <About t={t} />
           <Skills language={language} t={t} />
-          <PixelTransition />
           <Experience language={language} t={t} />
           <PixelTransition />
           <Projects language={language} t={t} />

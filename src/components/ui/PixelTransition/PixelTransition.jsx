@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import styles from "./PixelTransition.module.css";
 
-const PIXELS = Array.from({ length: 11 }, (_, index) => index);
+const PIXELS = Array.from({ length: 7 }, (_, index) => index);
 
 function PixelTransition() {
   const reduceMotion = useReducedMotion();
@@ -13,7 +13,7 @@ function PixelTransition() {
         className={styles.pixels}
         initial={reduceMotion ? "visible" : "hidden"}
         whileInView={reduceMotion ? undefined : "visible"}
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         {PIXELS.map((pixel) => (
           <motion.span
@@ -26,12 +26,12 @@ function PixelTransition() {
                 y: pixel % 2 === 0 ? -8 : 8,
               },
               visible: (index) => ({
-                opacity: [0, 0.9, 0.34],
+                opacity: [0, 0.72, 0.34],
                 scale: [0.35, 1, 0.72],
                 y: 0,
                 transition: {
-                  duration: 0.48,
-                  delay: index * 0.035,
+                  duration: 0.38,
+                  delay: index * 0.028,
                   ease: "linear",
                 },
               }),

@@ -62,7 +62,7 @@ a {
 }
 
 section {
-  scroll-margin-top: 96px;
+  scroll-margin-top: calc(var(--header-height) + 20px);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,78 +1,81 @@
-﻿.about {
+.about {
   padding: var(--space-6) 0;
 }
 
-.grid {
+.story {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 380px);
-  gap: var(--space-4);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 4rem;
   align-items: start;
 }
 
-.grid p {
-  max-width: 720px;
-  padding-right: 2rem;
+.lead {
+  max-width: 430px;
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.copy {
+  max-width: 690px;
+}
+
+.copy > p {
   color: var(--color-text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.95;
+  font-size: 1.06rem;
+  line-height: 1.85;
 }
 
-.highlights {
+.formation {
   display: grid;
+  grid-template-columns: minmax(110px, 0.35fr) minmax(0, 1fr);
   gap: 1rem;
-}
-
-.highlights div {
-  padding: 1.1rem 0;
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--color-border);
 }
 
-.highlights strong,
-.highlights span {
-  display: block;
-}
-
-.highlights strong {
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
+.formation > span {
+  color: var(--color-primary);
   font-family: var(--font-family-mono);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.highlights span {
+.formation p {
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 800px) {
   .about {
-    padding: var(--space-4) 0;
+    padding: var(--space-5) 0;
   }
 
-  .grid {
+  .story {
     grid-template-columns: 1fr;
-    gap: var(--space-3);
+    gap: 1.5rem;
   }
 
-  .grid p {
-    padding: 0;
-    font-size: 0.96rem;
-  }
-
-  .highlights {
-    gap: 0.8rem;
-  }
-
-  .highlights div {
-    padding: 1rem;
-  }
-
-  .highlights strong {
-    font-size: 0.96rem;
-  }
-
-  .highlights span {
-    font-size: 0.85rem;
+  .lead {
+    max-width: 560px;
+    font-size: 1.7rem;
   }
 }
 
+@media (max-width: 520px) {
+  .about {
+    padding: var(--space-4) 0;
+  }
+
+  .copy > p {
+    font-size: 0.96rem;
+  }
+
+  .formation {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}

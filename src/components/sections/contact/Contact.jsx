@@ -1,59 +1,59 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { FiMail } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
+import { HiOutlineDocumentText } from "react-icons/hi2";
+
 import Container from "../../ui/Container";
-import Button from "../../ui/Button";
 import profile from "../../../data/profile";
-import social from "../../../data/social";
 
 import styles from "./Contact.module.css";
 
 function Contact({ t }) {
   const reduceMotion = useReducedMotion();
-  const icons = {
-    github: <FaGithub size={18} aria-hidden="true" />,
-    linkedin: <FaLinkedin size={18} aria-hidden="true" />,
-    email: <FiMail size={18} aria-hidden="true" />,
-  };
 
   return (
     <motion.section
       id="contact"
       className={styles.contact}
-      initial={reduceMotion ? false : { opacity: 0, translateY: 20 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, translateY: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={reduceMotion ? undefined : { duration: 0.6, ease: "easeOut" }}
+      transition={reduceMotion ? undefined : { duration: 0.42, ease: "easeOut" }}
     >
       <Container>
         <div className={styles.wrapper}>
-          <div>
+          <div className={styles.copy}>
             <span className={styles.eyebrow}>{t.contact.title}</span>
             <h2>{t.contact.heading}</h2>
-            <p>{t.contact.paragraph}</p>
           </div>
 
           <div className={styles.actions}>
-            <Button href={`mailto:${profile.email}`} className={styles.actionButton}>
-              <span className={styles.buttonContent}>
-                {icons.email}
-                <span>{t.contact.button}</span>
-              </span>
-            </Button>
-            {social.slice(0, 2).map((item) => (
-              <Button
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                variant="secondary"
-                className={styles.actionButton}
-              >
-                <span className={styles.buttonContent}>
-                  {icons[item.id]}
-                  <span>{item.label}</span>
-                </span>
-              </Button>
-            ))}
+            <a
+              className={styles.emailLink}
+              href={`mailto:${profile.email}`}
+              aria-label={`${t.contact.emailLabel}: ${profile.email}`}
+            >
+              <span>{profile.email}</span>
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+
+            <div className={styles.socialLinks}>
+              <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                <FaGithub aria-hidden="true" />
+                <span>GitHub</span>
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+                <FaLinkedin aria-hidden="true" />
+                <span>LinkedIn</span>
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <HiOutlineDocumentText aria-hidden="true" />
+                <span>{t.contact.resumeLabel}</span>
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </Container>

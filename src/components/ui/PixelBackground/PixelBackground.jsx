@@ -163,7 +163,8 @@ function PixelBackground({ className = "", language = "pt" }) {
       const width = app.screen.width;
       const height = app.screen.height;
       const messages = getMessages(languageRef.current);
-      const visibleCount = Math.min(messages.length, width < 700 ? 10 : 14);
+      const isMobile = width < 700;
+      const visibleCount = Math.min(messages.length, isMobile ? 9 : 18);
       nextMessageIndex = visibleCount;
 
       const items = Array.from({ length: visibleCount }, (_, index) => {
@@ -172,7 +173,7 @@ function PixelBackground({ className = "", language = "pt" }) {
           text: message.text,
           style: {
             fontFamily: "monospace",
-            fontSize: width < 700 ? 10 : 12,
+            fontSize: isMobile ? 10 : 13,
             fontWeight: "500",
             fill: COLORS[message.type],
           },
@@ -186,7 +187,7 @@ function PixelBackground({ className = "", language = "pt" }) {
           yRatio,
           speed: 8 + random() * 17,
           phase: random() * Math.PI * 2,
-          opacity: 0.16 + random() * 0.1,
+          opacity: isMobile ? 0.17 + random() * 0.08 : 0.22 + random() * 0.12,
         };
 
         graphic.x = item.xRatio * Math.max(0, width - graphic.width);
