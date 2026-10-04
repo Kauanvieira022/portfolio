@@ -185,7 +185,7 @@ function PixelBackground({ className = "", language = "pt" }) {
           messageType: message.type,
           xRatio: random(),
           yRatio,
-          speed: 8 + random() * 17,
+          speed: 14 + random() * 24,
           phase: random() * Math.PI * 2,
           opacity: isMobile ? 0.17 + random() * 0.08 : 0.22 + random() * 0.12,
         };
