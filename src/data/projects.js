@@ -15,7 +15,7 @@ const projects = {
         "Responsive and keyboard-accessible navigation",
         "Automated production deployment through Vercel",
       ],
-      tags: ["React", "Vite", "CSS Modules", "Framer Motion"],
+      tags: ["React", "Vite", "CSS Modules", "Framer Motion", "PixiJS"],
       links: {
         live: "https://portfolio-six-black-66.vercel.app",
         source: "https://github.com/Kauanvieira022/portfolio",
@@ -70,7 +70,7 @@ const projects = {
         "Navegação responsiva e acessível por teclado",
         "Deploy de produção automatizado pela Vercel",
       ],
-      tags: ["React", "Vite", "CSS Modules", "Framer Motion"],
+      tags: ["React", "Vite", "CSS Modules", "Framer Motion", "PixiJS"],
       links: {
         live: "https://portfolio-six-black-66.vercel.app",
         source: "https://github.com/Kauanvieira022/portfolio",

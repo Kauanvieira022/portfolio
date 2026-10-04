@@ -52,7 +52,7 @@ function PixelProgress({ t }) {
   }, []);
 
   return (
-    <nav className={styles.progress} aria-label={t.nav.navigation}>
+    <nav className={styles.progress} aria-label={t.nav.sectionNavigation}>
       {navigation.map((item) => (
         <a
           key={item.id}

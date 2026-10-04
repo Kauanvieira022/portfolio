@@ -11,8 +11,8 @@ function PixelTransition() {
     <div className={styles.transition} aria-hidden="true">
       <motion.div
         className={styles.pixels}
-        initial={reduceMotion ? false : "hidden"}
-        whileInView="visible"
+        initial={reduceMotion ? "visible" : "hidden"}
+        whileInView={reduceMotion ? undefined : "visible"}
         viewport={{ once: false, amount: 0.7 }}
       >
         {PIXELS.map((pixel) => (

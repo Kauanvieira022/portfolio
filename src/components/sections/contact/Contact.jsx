@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import Container from "../../ui/Container";
@@ -9,6 +9,7 @@ import social from "../../../data/social";
 import styles from "./Contact.module.css";
 
 function Contact({ t }) {
+  const reduceMotion = useReducedMotion();
   const icons = {
     github: <FaGithub size={18} aria-hidden="true" />,
     linkedin: <FaLinkedin size={18} aria-hidden="true" />,
@@ -19,10 +20,10 @@ function Contact({ t }) {
     <motion.section
       id="contact"
       className={styles.contact}
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, translateY: 20 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, translateY: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={reduceMotion ? undefined : { duration: 0.6, ease: "easeOut" }}
     >
       <Container>
         <div className={styles.wrapper}>

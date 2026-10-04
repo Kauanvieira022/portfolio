@@ -122,7 +122,7 @@
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .nav {
     flex-wrap: nowrap;
     padding: 0.8rem 0;

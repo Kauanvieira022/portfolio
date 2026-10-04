@@ -1,5 +1,6 @@
 const technologies = [
   "React",
+  "PixiJS",
   "Node.js",
   "JavaScript",
   "Python",

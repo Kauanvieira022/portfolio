@@ -36,8 +36,8 @@ const skills = {
       items: ["React", "JavaScript", "HTML", "CSS", "CSS Modules", "UI responsiva"],
     },
     {
-      category: "Backend e automacao",
-      items: ["Node.js", "Python", "APIs REST", "Integracoes", "Automacao"],
+      category: "Backend e automação",
+      items: ["Node.js", "Python", "APIs REST", "Integrações", "Automação"],
     },
     {
       category: "Dados e BI",
@@ -46,7 +46,7 @@ const skills = {
         "SQLite",
         "SQL Server",
         "Power BI",
-        "Analise de dados",
+        "Análise de dados",
         "Limpeza de dados",
         "Dashboards",
         "Modelagem relacional",
@@ -54,7 +54,7 @@ const skills = {
     },
     {
       category: "Sistemas e processos",
-      items: ["ERP Oracle", "Qualitor", "Mapeamento de processos", "Testes", "Documentacao"],
+      items: ["ERP Oracle", "Qualitor", "Mapeamento de processos", "Testes", "Documentação"],
     },
     {
       category: "Entrega",

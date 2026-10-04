@@ -1,21 +1,22 @@
 ﻿import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import skills from "../../../data/skills";
 
 import styles from "./Skills.module.css";
 
 function Skills({ language, t }) {
   const groups = skills[language] ?? skills.en;
+  const reduceMotion = useReducedMotion();
 
   return (
     <motion.section
       id="skills"
       className={styles.skills}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
+      transition={reduceMotion ? undefined : { duration: 0.52, ease: [0.22, 1, 0.36, 1] }}
     >
       <Container>
         <SectionTitle subtitle={t.sectionSubtitles.skills} title={t.skills.title} />

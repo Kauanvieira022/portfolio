@@ -1,5 +1,8 @@
 const translations = {
   en: {
+    pageTitle: "Kauan Machado Vieira | Full Stack Developer",
+    pageDescription:
+      "Portfolio of Kauan Machado Vieira, Full Stack Developer focused on web applications, APIs, automation, data and Power BI.",
     sectionSubtitles: {
       about: "About",
       skills: "Skills",
@@ -15,6 +18,7 @@ const translations = {
       contact: "Contact",
       resume: "Resume",
       navigation: "Main navigation",
+      sectionNavigation: "Section navigation",
       language: "Select language",
       portuguese: "Portuguese",
       english: "English",
@@ -85,21 +89,25 @@ const translations = {
     },
   },
   pt: {
+    pageTitle: "Kauan Machado Vieira | Desenvolvedor Full Stack",
+    pageDescription:
+      "Portfólio de Kauan Machado Vieira, desenvolvedor Full Stack com experiência em aplicações web, APIs, automação, dados e Power BI.",
     sectionSubtitles: {
       about: "Sobre",
-      skills: "Skills",
+      skills: "Competências",
       experience: "Experiência",
       projects: "Projetos",
     },
     nav: {
       home: "Início",
       about: "Sobre",
-      skills: "Skills",
+      skills: "Competências",
       experience: "Experiência",
       projects: "Projetos",
       contact: "Contato",
       resume: "Currículo",
       navigation: "Navegação principal",
+      sectionNavigation: "Navegação por seção",
       language: "Selecionar idioma",
       portuguese: "Português",
       english: "Inglês",

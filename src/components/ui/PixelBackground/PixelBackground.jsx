@@ -1,51 +1,111 @@
 import { useEffect, useRef } from "react";
 
 const COLORS = {
-  sage: 0xa8c5ad,
-  paper: 0xf2f1ec,
-  teal: 0x7fa7a0,
-  amber: 0xd1ad68,
-  border: 0x303630,
+  code: 0xa8c5ad,
+  stack: 0x7fa7a0,
+  error: 0xc27f75,
 };
 
-const PARTICLE_COLORS = [
-  COLORS.sage,
-  COLORS.paper,
-  COLORS.teal,
-  COLORS.amber,
+const CODE_SNIPPETS = [
+  'console.log("Hello, world!")',
+  "const ui = <React />;",
+  "fetch('/api/projects')",
+  "SELECT * FROM projects;",
+  "def automate_process():",
+  'git commit -m "build with purpose"',
+  "return <Portfolio />;",
 ];
 
-const SCENES = [
-  { trackAlpha: 0.82 },
-  { trackAlpha: 0.36 },
-  { trackAlpha: 0.58 },
-  { trackAlpha: 0.3 },
-  { trackAlpha: 0.66 },
-  { trackAlpha: 0.4 },
+const ERROR_MESSAGES = [
+  "TypeError: value is undefined",
+  "ReferenceError: identifier not found",
+  "404: ROUTE_NOT_FOUND",
+  "SQLITE_CONSTRAINT: duplicate key",
+  "SyntaxError: unexpected token",
+  "ERR_CONNECTION_REFUSED",
+  "BUILD_ERROR: dependency missing",
 ];
 
-function createRandom(seed = 2401) {
-  let value = seed;
+const STACK_DEFINITIONS = {
+  en: [
+    "React // component-based UI",
+    "Node.js // backend and REST APIs",
+    "Python // process automation",
+    "SQL Server // relational data",
+    "SQLite // local database",
+    "Power BI // dashboards and analysis",
+    "Git + GitHub // version control",
+    "HTML + CSS // responsive interfaces",
+    "CSS Modules // scoped styles",
+    "Vite // development and build",
+    "ESLint // code quality",
+    "Vercel // deployment",
+    "Oracle ERP // business systems",
+    "Qualitor // service desk",
+    "REST APIs // system integration",
+    "Relational modeling // structured data",
+  ],
+  pt: [
+    "React // interfaces por componentes",
+    "Node.js // backend e APIs REST",
+    "Python // automação de processos",
+    "SQL Server // dados relacionais",
+    "SQLite // banco de dados local",
+    "Power BI // dashboards e análise",
+    "Git + GitHub // controle de versão",
+    "HTML + CSS // interfaces responsivas",
+    "CSS Modules // estilos isolados",
+    "Vite // desenvolvimento e build",
+    "ESLint // qualidade do código",
+    "Vercel // deploy",
+    "Oracle ERP // sistemas corporativos",
+    "Qualitor // gestão de chamados",
+    "APIs REST // integração entre sistemas",
+    "Modelagem relacional // dados estruturados",
+  ],
+};
 
-  return () => {
-    value = (value * 16807) % 2147483647;
-    return (value - 1) / 2147483646;
-  };
+function getMessages(language) {
+  const stacks = STACK_DEFINITIONS[language] ?? STACK_DEFINITIONS.en;
+  const messages = [];
+  const count = Math.max(CODE_SNIPPETS.length, ERROR_MESSAGES.length, stacks.length);
+
+  for (let index = 0; index < count; index += 1) {
+    if (CODE_SNIPPETS[index]) {
+      messages.push({ text: CODE_SNIPPETS[index], type: "code" });
+    }
+
+    if (stacks[index]) {
+      messages.push({ text: stacks[index], type: "stack" });
+    }
+
+    if (ERROR_MESSAGES[index]) {
+      messages.push({ text: ERROR_MESSAGES[index], type: "error" });
+    }
+  }
+
+  return messages;
 }
 
-function createPixel(Graphics, size, color, filled) {
-  const pixel = new Graphics();
-
-  pixel
-    .rect(-size / 2, -size / 2, size, size)
-    .fill({ color, alpha: filled ? 0.12 : 0.025 })
-    .stroke({ color, width: filled ? 1 : 2, alpha: filled ? 0.34 : 0.48 });
-
-  return pixel;
+function setMessage(item, message) {
+  item.graphic.text = message.text;
+  item.graphic.style.fill = COLORS[message.type];
+  item.messageType = message.type;
 }
 
-function PixelBackground({ className = "" }) {
+function PixelBackground({ className = "", language = "pt" }) {
   const hostRef = useRef(null);
+  const languageRef = useRef(language);
+  const textItemsRef = useRef([]);
+
+  useEffect(() => {
+    languageRef.current = language;
+    const messages = getMessages(language);
+
+    textItemsRef.current.forEach((item) => {
+      setMessage(item, messages[item.messageIndex % messages.length]);
+    });
+  }, [language]);
 
   useEffect(() => {
     const host = hostRef.current;
@@ -57,18 +117,22 @@ function PixelBackground({ className = "" }) {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     );
-    const random = createRandom();
+    const random = (() => {
+      let value = 2401;
+
+      return () => {
+        value = (value * 16807) % 2147483647;
+        return (value - 1) / 2147483646;
+      };
+    })();
     let app;
     let disposed = false;
     let resizeObserver;
     let elapsed = 0;
-    let trackTargetAlpha = 1;
-    let activeScene = 0;
-    let scrollTarget = window.scrollY;
-    let scrollPosition = scrollTarget;
+    let nextMessageIndex = 0;
 
     const setup = async () => {
-      const { Application, Container, Graphics } = await import("pixi.js");
+      const { Application, Text } = await import("pixi.js");
 
       if (disposed) {
         return;
@@ -77,9 +141,10 @@ function PixelBackground({ className = "" }) {
       app = new Application();
 
       await app.init({
+        autoStart: false,
         resizeTo: host,
         backgroundAlpha: 0,
-        antialias: false,
+        antialias: true,
         autoDensity: true,
         resolution: Math.min(window.devicePixelRatio || 1, 1.5),
         preference: "webgl",
@@ -95,212 +160,104 @@ function PixelBackground({ className = "" }) {
       app.canvas.setAttribute("role", "presentation");
       host.appendChild(app.canvas);
 
-      const grid = new Graphics();
-      const horizon = new Graphics();
-      const track = new Graphics();
-      const particlesLayer = new Container();
-      const codeLayer = new Container();
-      const codeBits = Array.from({ length: 18 }, (_, index) => {
-        const bit = new Graphics();
-        const width = 18 + Math.floor(random() * 34);
-        const height = 4 + Math.floor(random() * 8);
+      const width = app.screen.width;
+      const height = app.screen.height;
+      const messages = getMessages(languageRef.current);
+      const visibleCount = Math.min(messages.length, width < 700 ? 10 : 14);
+      nextMessageIndex = visibleCount;
 
-        bit
-          .rect(0, 0, width, height)
-          .fill({
-            color: index % 3 === 0 ? COLORS.amber : COLORS.sage,
-            alpha: 0.16,
-          })
-          .rect(width + 8, 0, 8, height)
-          .fill({ color: COLORS.paper, alpha: 0.12 });
-
-        bit.x = random() * window.innerWidth;
-        bit.y = random() * window.innerHeight;
-        bit.alpha = 0.25 + random() * 0.2;
-        codeLayer.addChild(bit);
-
-        return {
-          graphic: bit,
-          speed: 22 + random() * 34,
-          yRatio: random(),
-          phase: random() * Math.PI * 2,
-        };
-      });
-      const particles = Array.from({ length: 34 }, (_, index) => {
-        const size = 4 + Math.floor(random() * 14);
-        const color = PARTICLE_COLORS[index % PARTICLE_COLORS.length];
-        const graphic = createPixel(
-          Graphics,
-          size,
-          color,
-          index % 4 === 0,
-        );
-        const data = {
+      const items = Array.from({ length: visibleCount }, (_, index) => {
+        const message = messages[index % messages.length];
+        const graphic = new Text({
+          text: message.text,
+          style: {
+            fontFamily: "monospace",
+            fontSize: width < 700 ? 10 : 12,
+            fontWeight: "500",
+            fill: COLORS[message.type],
+          },
+        });
+        const yRatio = (index + 0.5 + (random() - 0.5) * 0.3) / visibleCount;
+        const item = {
           graphic,
-          size,
-          speed: 10 + random() * 34,
-          verticalSpeed: 5 + random() * 14,
-          rotationSpeed: (random() - 0.5) * 1.2,
-          phase: random() * Math.PI * 2,
+          messageIndex: index,
+          messageType: message.type,
           xRatio: random(),
-          yRatio: random(),
+          yRatio,
+          speed: 8 + random() * 17,
+          phase: random() * Math.PI * 2,
+          opacity: 0.16 + random() * 0.1,
         };
 
-        particlesLayer.addChild(graphic);
-        return data;
+        graphic.x = item.xRatio * Math.max(0, width - graphic.width);
+        graphic.y = yRatio * Math.max(0, height - graphic.height);
+        graphic.alpha = item.opacity;
+
+        return item;
       });
 
-      app.stage.addChild(grid, horizon, codeLayer, particlesLayer, track);
-
-      const updateScene = (jumpToTarget = false) => {
-        const scene = SCENES[activeScene] ?? SCENES[0];
-
-        trackTargetAlpha = scene.trackAlpha;
-
-        if (jumpToTarget) {
-          track.alpha = trackTargetAlpha;
-        }
-      };
+      textItemsRef.current = items;
+      app.stage.addChild(...items.map((item) => item.graphic));
 
       const layout = () => {
-        const width = app.screen.width;
-        const height = app.screen.height;
-        const cell = width < 700 ? 40 : 56;
-        const trackY = height * 0.82;
+        const screenWidth = app.screen.width;
+        const screenHeight = app.screen.height;
 
-        grid.clear();
-
-        for (let x = 0; x <= width + cell; x += cell) {
-          grid.moveTo(x, 0).lineTo(x, height);
-        }
-
-        for (let y = 0; y <= height + cell; y += cell) {
-          grid.moveTo(0, y).lineTo(width + cell, y);
-        }
-
-        grid.stroke({ color: COLORS.border, width: 1, alpha: 0.24 });
-
-        horizon
-          .clear()
-          .moveTo(0, trackY)
-          .lineTo(width, trackY)
-          .stroke({ color: COLORS.sage, width: 1, alpha: 0.26 });
-
-        track.clear();
-
-        for (let x = -240; x <= width + 480; x += 120) {
-          track
-            .rect(x, trackY + 16, 72, 26)
-            .fill({ color: COLORS.sage, alpha: 0.025 })
-            .stroke({ color: COLORS.sage, width: 1, alpha: 0.2 });
-
-          track
-            .poly([
-              x + 78,
-              trackY,
-              x + 96,
-              trackY - 28,
-              x + 114,
-              trackY,
-            ])
-            .fill({ color: COLORS.amber, alpha: 0.08 })
-            .stroke({ color: COLORS.amber, width: 1, alpha: 0.3 });
-
-          track
-            .rect(x + 136, trackY - 46, 42, 10)
-            .fill({ color: COLORS.teal, alpha: 0.08 })
-            .stroke({ color: COLORS.teal, width: 1, alpha: 0.24 });
-        }
-
-        particles.forEach((particle) => {
-          particle.graphic.x = particle.xRatio * width;
-          particle.graphic.y = particle.yRatio * height;
+        items.forEach((item) => {
+          item.graphic.x = Math.min(
+            item.xRatio * screenWidth,
+            Math.max(0, screenWidth - item.graphic.width),
+          );
+          item.graphic.y = item.yRatio * Math.max(0, screenHeight - item.graphic.height);
         });
 
-        updateScene(true);
+        if (reducedMotion.matches) {
+          app.render();
+        }
       };
-
-      const onScroll = () => {
-        scrollTarget = window.scrollY;
-        const marker = scrollTarget + window.innerHeight * 0.52;
-        const sections = document.querySelectorAll("main section[id]");
-        let nextScene = 0;
-
-        sections.forEach((section, index) => {
-          if (section.offsetTop <= marker) {
-            nextScene = index;
-          }
-        });
-
-        activeScene = Math.min(nextScene, SCENES.length - 1);
-        updateScene();
-      };
-
-      resizeObserver = new ResizeObserver(layout);
-      resizeObserver.observe(host);
-      window.addEventListener("scroll", onScroll, { passive: true });
 
       app.ticker.maxFPS = reducedMotion.matches ? 24 : 48;
       app.ticker.add((ticker) => {
         const motionFactor = reducedMotion.matches ? 0.35 : 1;
         const deltaSeconds = Math.min(ticker.deltaMS / 1000, 0.05);
-        const width = app.screen.width;
-        const height = app.screen.height;
-        const cell = width < 700 ? 40 : 56;
+        const screenWidth = app.screen.width;
+        const screenHeight = app.screen.height;
 
         elapsed += deltaSeconds * motionFactor;
-        scrollPosition += (scrollTarget - scrollPosition) * 0.035;
-        track.alpha += (trackTargetAlpha - track.alpha) * 0.04;
 
-        grid.x = -(elapsed * 18) % cell;
-        grid.y = -(scrollPosition * 0.025) % cell;
-        horizon.alpha = 0.72 + Math.sin(elapsed * 4.4) * 0.16;
-        track.x = -(elapsed * 52) % 240;
+        items.forEach((item) => {
+          const graphic = item.graphic;
 
-        const beat = Math.pow(
-          Math.max(0, Math.sin(elapsed * Math.PI * 2 * 1.1)),
-          10,
-        );
+          graphic.x -= item.speed * deltaSeconds * motionFactor;
+          graphic.y =
+            item.yRatio * Math.max(0, screenHeight - graphic.height) +
+            Math.sin(elapsed * 0.7 + item.phase) * 3;
+          graphic.alpha = item.opacity * (0.88 + Math.sin(elapsed + item.phase) * 0.12);
 
-        codeBits.forEach((bit, index) => {
-          const graphic = bit.graphic;
-
-          graphic.x -= bit.speed * deltaSeconds * motionFactor;
-          graphic.y += Math.sin(elapsed * 1.4 + bit.phase) * 0.09;
-
-          if (graphic.x < -90) {
-            graphic.x = width + 90;
-            graphic.y = bit.yRatio * height + (index % 4) * 12;
-          }
-        });
-
-        particles.forEach((particle, index) => {
-          const graphic = particle.graphic;
-
-          graphic.x -= particle.speed * deltaSeconds * motionFactor;
-          graphic.y +=
-            Math.sin(elapsed * particle.verticalSpeed * 0.1 + particle.phase) *
-            0.16;
-          graphic.rotation +=
-            particle.rotationSpeed * deltaSeconds * motionFactor;
-          graphic.alpha =
-            0.32 +
-            Math.sin(elapsed * 1.8 + particle.phase) * 0.12 +
-            beat * (index % 3 === 0 ? 0.18 : 0.04);
-
-          if (graphic.x < -particle.size) {
-            graphic.x = width + particle.size;
-            graphic.y =
-              ((particle.yRatio * height + index * 17) % height) + 1;
+          if (graphic.x < -graphic.width - 24) {
+            const nextMessages = getMessages(languageRef.current);
+            item.messageIndex = nextMessageIndex % nextMessages.length;
+            nextMessageIndex += 1;
+            setMessage(item, nextMessages[item.messageIndex]);
+            graphic.x = screenWidth + 24;
           }
         });
       });
 
-      layout();
-      onScroll();
+      app.start();
 
-      app.cleanupPixelBackground = () => {
-        window.removeEventListener("scroll", onScroll);
+      const onMotionPreferenceChange = () => {
+        app.ticker.maxFPS = reducedMotion.matches ? 24 : 48;
+        app.start();
+      };
+
+      reducedMotion.addEventListener("change", onMotionPreferenceChange);
+      resizeObserver = new ResizeObserver(layout);
+      resizeObserver.observe(host);
+      layout();
+
+      app.cleanupCodeBackground = () => {
+        reducedMotion.removeEventListener("change", onMotionPreferenceChange);
       };
     };
 
@@ -309,7 +266,8 @@ function PixelBackground({ className = "" }) {
     return () => {
       disposed = true;
       resizeObserver?.disconnect();
-      app?.cleanupPixelBackground?.();
+      app?.cleanupCodeBackground?.();
+      textItemsRef.current = [];
 
       if (app?.renderer) {
         app.destroy(true, { children: true });

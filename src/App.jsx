@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { MotionConfig } from "framer-motion";
 
 import Navbar from "./components/layout/navbar";
 import Footer from "./components/layout/footer";
@@ -16,49 +17,61 @@ import PixelTransition from "./components/ui/PixelTransition/PixelTransition";
 import translations from "./data/translations";
 import styles from "./App.module.css";
 
-function App() {
-  const [language, setLanguage] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("portfolio-language") || "pt";
-    }
-
+function getInitialLanguage() {
+  try {
+    return localStorage.getItem("portfolio-language") === "en" ? "en" : "pt";
+  } catch {
     return "pt";
-  });
+  }
+}
+
+function App() {
+  const [language, setLanguage] = useState(getInitialLanguage);
+  const t = useMemo(() => translations[language] ?? translations.pt, [language]);
 
   useEffect(() => {
-    localStorage.setItem("portfolio-language", language);
-    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-  }, [language]);
+    try {
+      localStorage.setItem("portfolio-language", language);
+    } catch {
+      // Keep the selected language in memory if browser storage is unavailable.
+    }
 
-  const t = useMemo(() => translations[language], [language]);
+    document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+    document.title = t.pageTitle;
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", t.pageDescription);
+  }, [language, t]);
 
   return (
-    <div className={styles.app}>
-      <PixelBackground className={styles.pixelBackground} />
-      <PixelCursor />
-      <PixelNavigationTransition />
-      <PixelProgress t={t} />
+    <MotionConfig reducedMotion="user">
+      <div className={styles.app}>
+        <PixelBackground className={styles.codeBackground} language={language} />
+        <PixelCursor />
+        <PixelNavigationTransition />
+        <PixelProgress t={t} />
 
-      <Navbar language={language} setLanguage={setLanguage} t={t} />
+        <Navbar language={language} setLanguage={setLanguage} t={t} />
 
-      <main className={styles.main}>
-        <Hero language={language} t={t} />
-        <PixelTransition />
-        <About language={language} t={t} />
-        <PixelTransition />
-        <Skills language={language} t={t} />
-        <PixelTransition />
-        <Experience language={language} t={t} />
-        <PixelTransition />
-        <Projects language={language} t={t} />
-        <PixelTransition />
-        <Contact language={language} t={t} />
-      </main>
+        <main className={styles.main}>
+          <Hero language={language} t={t} />
+          <PixelTransition />
+          <About language={language} t={t} />
+          <PixelTransition />
+          <Skills language={language} t={t} />
+          <PixelTransition />
+          <Experience language={language} t={t} />
+          <PixelTransition />
+          <Projects language={language} t={t} />
+          <PixelTransition />
+          <Contact language={language} t={t} />
+        </main>
 
-      <div className={styles.footerLayer}>
-        <Footer language={language} t={t} />
+        <div className={styles.footerLayer}>
+          <Footer language={language} t={t} />
+        </div>
       </div>
-    </div>
+    </MotionConfig>
   );
 }
 

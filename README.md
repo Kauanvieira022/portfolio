@@ -24,6 +24,7 @@ O projeto também funciona como um estudo prático de produto: conteúdo bilíng
 - JavaScript
 - CSS Modules
 - Framer Motion
+- PixiJS
 - React Icons
 - ESLint
 

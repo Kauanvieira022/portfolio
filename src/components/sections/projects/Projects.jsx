@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowUpRight, FiGithub } from "react-icons/fi";
 
 import Container from "../../ui/Container";
@@ -10,15 +10,16 @@ import styles from "./Projects.module.css";
 function Projects({ language, t }) {
   const collection = projects[language] ?? projects.en;
   const project = collection.featured;
+  const reduceMotion = useReducedMotion();
 
   return (
     <motion.section
       id="projects"
       className={styles.projects}
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, translateY: 20 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, translateY: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={reduceMotion ? undefined : { duration: 0.5, ease: "easeOut" }}
     >
       <Container>
         <SectionTitle subtitle={t.sectionSubtitles.projects} title={t.projects.title} />

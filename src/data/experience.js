@@ -55,7 +55,7 @@ const experience = {
   pt: [
     {
       company: "Grupo Lumicenter Lighting",
-      title: "Estágio em Tecnologia — Data Engineering, IA e Desenvolvimento de Aplicações",
+      title: "Estágio em Tecnologia — Engenharia de Dados, IA e Desenvolvimento de Aplicações",
       type: "Estágio",
       period: "Abr 2026 — o momento",
       location: "São José dos Pinhais, Paraná, Brasil — Presencial",

@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Container from "../../ui/Container";
 import SectionTitle from "../../ui/SectionTitle";
 import experience from "../../../data/experience";
@@ -7,6 +7,7 @@ import styles from "./Experience.module.css";
 
 function Experience({ language, t }) {
   const items = experience[language] ?? experience.en;
+  const reduceMotion = useReducedMotion();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -31,10 +32,10 @@ function Experience({ language, t }) {
     <motion.section
       id="experience"
       className={styles.experience}
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, translateY: 20 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, translateY: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={reduceMotion ? undefined : { duration: 0.6, ease: "easeOut" }}
     >
       <Container>
         <SectionTitle subtitle={t.sectionSubtitles.experience} title={t.experience.title} />
@@ -42,16 +43,16 @@ function Experience({ language, t }) {
         <motion.div
           key={`experience-${language}`}
           className={styles.timeline}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          variants={reduceMotion ? undefined : containerVariants}
+          initial={reduceMotion ? false : "hidden"}
+          whileInView={reduceMotion ? undefined : "visible"}
           viewport={{ once: true, amount: 0.2 }}
         >
           {items.map((item) => (
             <motion.article
               key={`${item.company}-${item.title}`}
               className={styles.item}
-              variants={itemVariants}
+              variants={reduceMotion ? undefined : itemVariants}
             >
               <div className={styles.header}>
                 <div>

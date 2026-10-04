@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import profile from "../../../data/profile";
 import technologies from "../../../data/technologies";
 
@@ -8,15 +8,17 @@ import Container from "../../ui/Container";
 import styles from "./Hero.module.css";
 import profilePhoto from "../../../assets/images/profile-photo.webp";
 
-function Hero({ t }) {
+function Hero({ language, t }) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.section
       id="home"
       className={styles.hero}
-      initial={{ opacity: 0, translateY: 20 }}
-      whileInView={{ opacity: 1, translateY: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, translateY: 20 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, translateY: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={reduceMotion ? undefined : { duration: 0.6, ease: "easeOut" }}
     >
       <Container>
         <div className={styles.wrapper}>
@@ -24,7 +26,9 @@ function Hero({ t }) {
             <span className={styles.systemLine}>{t.hero.systemLine}</span>
 
             <div className={styles.eyebrow}>
-              <span className={styles.badge}>{profile.role}</span>
+              <span className={styles.badge}>
+                {profile.role[language] ?? profile.role.en}
+              </span>
               <span className={styles.location}>{t.hero.location}</span>
             </div>
 

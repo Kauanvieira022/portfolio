@@ -99,7 +99,7 @@ function Navbar({ language, setLanguage, t }) {
         <nav className={styles.nav} aria-label={t.nav.navigation}>
           <a className={styles.logo} href="#home" onClick={handleNavClick}>
             <h2>{profile.name}</h2>
-            <span>{profile.role}</span>
+            <span>{profile.role[language] ?? profile.role.en}</span>
           </a>
 
           <ul
